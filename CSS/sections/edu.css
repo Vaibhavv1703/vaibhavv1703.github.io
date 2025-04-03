@@ -3,9 +3,9 @@
     min-height: 90vh;
 }
 
-.section-title {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
+.edu .section-title {
+    font-family: var(--bold-text);
+    font-size: 5rem;
     color: #00d4ff;
     text-align: center;
     margin-bottom: 2rem;
@@ -26,14 +26,14 @@
     flex-direction: column;
     gap: 2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 5rem;
     margin-left: 11.5rem;
 }
 
 .edu__item {
     font-size: 1.2rem;
     line-height: 1;
-    color: #d0d0d0;
+    color: var(--text-color);
 }
 
 .edu__item h3 {
@@ -44,5 +44,5 @@
 
 .edu__item p {
     margin: 0.2rem 0;
-    color: #a0a0a0;
+    color: var(--text-color);
 }

@@ -18,6 +18,10 @@
 :root {
     --cursive-text: CursiveFont, sans-serif;
     --bold-text: BoldFont, sans-serif;
+    --highlight-color: #062945;
+    --primary-color: #1664a4;
+    --accent-color: #ff5722;
+    --text-color: #e0e0e0;
 }
 
 
@@ -30,8 +34,8 @@
 }
 
 body {
-    background-color: #0f0f1f;
-    color: #fff;
+    background-color: var(--highlight-color);
+    color: var(--text-color);
 }
 
 .resume-button {

@@ -5,6 +5,7 @@
     justify-content: flex-start;
     padding: 2rem 4rem;
     margin-left: 10rem;
+    margin-top: 5rem;
 }
 
 .home__content {
@@ -14,7 +15,7 @@
 
 .greeting {
     font-size: 1.5rem;
-    color: #a0a0a0;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
@@ -36,7 +37,7 @@
 
 .description {
     font-size: 1.2rem;
-    color: #d0d0d0;
+    color: var(--text-color);
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -57,7 +58,7 @@
 
 .primary-btn {
     background: linear-gradient(to right, #4c7bff, #a64dff);
-    color: white;
+    color: var(--text-color);
     font-weight: bold;
     font-size: 1.2rem;
     text-transform: uppercase;
