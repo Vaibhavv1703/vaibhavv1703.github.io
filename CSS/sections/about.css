@@ -1,0 +1,54 @@
+.about {
+    padding: 4rem 2rem;
+    background-color: #0f0f1f;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.section-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    color: #00d4ff;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}   
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #00d4ff;
+    margin: 0.5rem auto 0;
+}
+
+.about__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about__text {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-left: 4rem;
+}
+
+.about__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__image img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
