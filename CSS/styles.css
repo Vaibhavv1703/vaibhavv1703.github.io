@@ -39,6 +39,21 @@ body {
     color: var(--text-color);
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: var(--primary-color);
+    z-index: 10000;
+    transition: width 0.1s ease-out;
+}
+
 .resume-button {
     position: fixed;
     bottom: 20px;

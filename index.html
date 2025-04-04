@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <div class="progress-bar"></div>
+
     <header>
         <nav class="header__nav">
             <ul class="header__menu">
@@ -156,6 +158,13 @@
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
     AOS.init();
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+    });
 
     var typed = new Typed('#typed', {
         strings: ['Coder.', 'Developer.', 'Techie.', 'Engineer.', 'Designer.', 'Creator.', 'Gamer.'],
