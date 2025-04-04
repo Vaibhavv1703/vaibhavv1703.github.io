@@ -34,10 +34,9 @@
             <div class="home__text">
                 <div class="greeting" data-aos="fade-up">Hello, I'm</div>
                 <div class="name" data-aos="zoom-in" data-aos-duration="1000">Vaibhav Singh.</div>
-                <div class="role" data-aos="fade-up" data-aos-delay="500">A Passionate Developer.</div>
+                <span class="role" data-aos="fade-right" data-aos-delay="500">A Passionate <span id="typed"></span></span>
                 <div class="description">
-                    I specialize in creating innovative and efficient software solutions. Explore my portfolio to learn
-                    more about my skills, projects, and achievements.
+                    Crafting solutions, one line of code at a time.
                 </div>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn primary-btn">Let's Talk!</a>
@@ -152,8 +151,21 @@
     </footer>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
-    AOS.init(); // Initialize AOS
+    AOS.init();
+
+    var typed = new Typed('#typed', {
+      strings: ['Coder.', 'Developer.', 'Gamer.'],
+      typeSpeed: 85,
+      backSpeed: 50,
+      loop: true,
+      backDelay: 1000,
+      startDelay: 1100,
+      onComplete: (self) => {
+        self.startDelay = 0;
+      }
+    });
 </script>
 
 </html>
