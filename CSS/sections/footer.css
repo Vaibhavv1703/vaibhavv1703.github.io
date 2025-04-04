@@ -1,5 +1,5 @@
 .footer {
-    background-color: #1a1a2e;
+    background-color: var(--highlight-color); /* Updated to use the background color */
     text-align: center;
     padding: 2rem 1rem 1rem;
     font-size: 1rem;
@@ -19,7 +19,7 @@
 }
 
 .footer__link {
-    color: #00d4ff;
+    color: var(--primary-color); /* Updated to use the primary color */
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
@@ -33,17 +33,17 @@
 }
 
 .footer__link:hover {
-    color: #ff007f;
+    color: var(--accent-color); /* Updated to use the accent color */
 }
 
 .footer__copyright {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: #d0d0d0;
+    color: var(--text-color); /* Updated to use the text color */
 }
 
 .footer__love {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: #ff007f;
+    color: var(--accent-color); /* Updated to use the accent color */
 }
