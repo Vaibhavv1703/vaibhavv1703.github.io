@@ -119,3 +119,13 @@
     transform: translateY(-1.5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+
+.typed-cursor {
+    color: #00ffcc;
+    font-weight: bold;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
