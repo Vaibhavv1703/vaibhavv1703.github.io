@@ -1,6 +1,7 @@
 .about {
     padding: 4rem 2rem;
-    min-height: 100vh;
+    padding-top: 6rem;
+    min-height: 50rem;
 }
 
 .about__content {

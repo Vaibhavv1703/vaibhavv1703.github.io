@@ -1,6 +1,7 @@
 .edu {
     padding: 4rem 2rem;
-    min-height: 90vh;
+    padding-top: 6rem;
+    min-height: 50rem;
 }
 
 .edu__content {
