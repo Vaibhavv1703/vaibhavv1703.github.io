@@ -20,7 +20,7 @@
                 <li><a href="#about">AboutMe</a></li>
                 <li><a href="#edu">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <!-- <li><a href="#projects">Projects</a></li> -->
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -106,7 +106,6 @@
             </div>
         </div>
 
-        <!-- Podium Section -->
         <div class="podium">
             <h3 class="podium__title">My Ratings</h3>
             <div class="podium__boxes">
@@ -132,6 +131,43 @@
         </div>
     </section>
 
+    <section class="projects" id="projects">
+        <h2 class="section-title" data-aos="fade-up">Projects</h2>
+        <div class="carousel" data-aos="fade-up">
+            <div class="carousel__track">
+                <a href="https://github.com/Vaibhavv1703/PasswordChecker" class="carousel__card">
+                    <h3>Password Manager</h3>
+                    <p>A secure, terminal-based utility for managing and retrieving passwords efficiently, featuring
+                        encryption and easy search functionality.</p>
+                </a>
+                <a href="https://github.com/Vaibhavv1703/Quidditch-Quest" class="carousel__card">
+                    <h3>Quidditch Quest</h3>
+                    <p>A browser-based game inspired by Harry Potter’s Quidditch, offering engaging gameplay and magical
+                        challenges for fans and casual gamers alike.</p>
+                </a>
+                <a href="https://github.com/Vaibhavv1703/Expense-Manager" class="carousel__card">
+                    <h3>Expense Manager</h3>
+                    <p>A web application to log, categorize, and track your expenses, providing insightful analytics to
+                        help you manage your finances better.</p>
+                </a>
+                <a href="https://github.com/Vaibhavv1703/vaibhavv1703_dmc" class="carousel__card">
+                    <h3>DmC Themed Portfolio</h3>
+                    <p>A personal portfolio website designed with a Devil May Cry 5 theme, showcasing projects and
+                        skills with stylish, game-inspired visuals.</p>
+                </a>
+                <a class="carousel__card">
+                    <h3>Address Book Manager</h3>
+                    <p>A simple terminal tool for organizing and searching contacts, making address book management fast
+                        and user-friendly.</p>
+                </a>
+            </div>
+        </div>
+        <div class="carousel__btn">
+            <button class="carousel__btn--left" data-aos="fade-up-left">&#8592;</button>
+            <button class="carousel__btn--right" data-aos="fade-up-right">&#8594;</button>
+        </div>
+    </section>
+
     <footer class="footer" id="contact">
         <div class="footer__content">
             <div class="footer__info">
@@ -149,7 +185,7 @@
                 © 2025 Vaibhav Singh. All Rights Reserved.
             </p>
             <p class="footer__love">
-                Made with ❤️ by Vaibhav Singh
+                Made with &heartsuit; by Vaibhav Singh
             </p>
         </div>
     </footer>
@@ -177,6 +213,58 @@
             self.startDelay = 0;
         }
     });
+
+    const projectCards = document.querySelectorAll('.carousel__card');
+    const leftBtn = document.querySelector('.carousel__btn--left');
+    const rightBtn = document.querySelector('.carousel__btn--right');
+    const carousel = document.querySelector('.carousel');
+    const carouselBtn = document.querySelector('.carousel__btn');
+
+    let activeIdx = 0;
+
+    function updateProjectCarousel() {
+        projectCards.forEach((card, idx) => {
+            card.classList.remove('carousel__card--left', 'carousel__card--active', 'carousel__card--right');
+        });
+        const total = projectCards.length;
+        const leftIdx = (activeIdx - 1 + total) % total;
+        const rightIdx = (activeIdx + 1) % total;
+
+        projectCards[leftIdx].classList.add('carousel__card--left');
+        projectCards[activeIdx].classList.add('carousel__card--active');
+        projectCards[rightIdx].classList.add('carousel__card--right');
+    }
+
+    leftBtn.addEventListener('click', () => {
+        activeIdx = (activeIdx - 1 + projectCards.length) % projectCards.length;
+        updateProjectCarousel();
+    });
+    rightBtn.addEventListener('click', () => {
+        activeIdx = (activeIdx + 1) % projectCards.length;
+        updateProjectCarousel();
+    });
+
+    let autoRotateInterval = setInterval(() => {
+        activeIdx = (activeIdx + 1) % projectCards.length;
+        updateProjectCarousel();
+    }, 3000);
+
+    function pauseAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+    function resumeAutoRotate() {
+        autoRotateInterval = setInterval(() => {
+            activeIdx = (activeIdx + 1) % projectCards.length;
+            updateProjectCarousel();
+        }, 3000);
+    }
+
+    carousel.addEventListener('mouseenter', pauseAutoRotate);
+    carousel.addEventListener('mouseleave', resumeAutoRotate);
+    carouselBtn.addEventListener('mouseenter', pauseAutoRotate);
+    carouselBtn.addEventListener('mouseleave', resumeAutoRotate);
+    
+    updateProjectCarousel();
 </script>
 
 </html>
