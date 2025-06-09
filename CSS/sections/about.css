@@ -1,0 +1,35 @@
+.about {
+    padding: 4rem 2rem;
+    padding-top: 6rem;
+    min-height: 50rem;
+}
+
+.about__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about__text {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-left: 4rem;
+}
+
+.about__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__image img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}

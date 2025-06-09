@@ -1,0 +1,84 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.carousel__btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+    margin-top: -1.5rem;
+    gap: 1rem;
+}
+
+.carousel__btn--left, .carousel__btn--right {
+    background: var(--highlight-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 30%;
+    width: 60px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.carousel__btn--left:hover, .carousel__btn--right:hover {
+    color: var(--accent-color);
+}
+.carousel__track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 260px;
+    overflow: visible;
+}
+.carousel__card {
+    text-decoration: none;
+    color: var(--text-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 260px;
+    min-height: 180px;
+    background: var(--highlight-color);
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+    transition: 
+    transform 0.5s cubic-bezier(.77,0,.18,1),
+    opacity 0.4s cubic-bezier(.77,0,.18,1),
+    z-index 0s;
+    z-index: 1;
+    pointer-events: none;
+}
+.carousel__card--left {
+    opacity: 1;
+    z-index: 2;
+    transform: translate(-170%, -50%) scale(0.9);
+    pointer-events: auto;
+}
+.carousel__card--active {
+    opacity: 1;
+    z-index: 3;
+    transform: translate(-50%, -50%) scale(1.25);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    pointer-events: auto;
+}
+.carousel__card--right {
+    opacity: 1;
+    z-index: 2;
+    transform: translate(70%, -50%) scale(0.9);
+    pointer-events: auto;
+}
+
+.carousel__card h3 {
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}

@@ -1,0 +1,31 @@
+.edu {
+    padding: 4rem 2rem;
+    padding-top: 6rem;
+    min-height: 50rem;
+}
+
+.edu__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 5rem;
+    margin-left: 11.5rem;
+}
+
+.edu__item {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--text-color);
+}
+
+.edu__item h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.edu__item p {
+    margin: 0.2rem 0;
+    color: var(--text-color);
+}
