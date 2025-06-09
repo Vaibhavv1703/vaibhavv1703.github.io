@@ -1,6 +1,5 @@
 .resume-button {
     position: fixed;
-    bottom: 20px;
     left: 20px;
     background-color: var(--primary-color);
     text-decoration: none;
