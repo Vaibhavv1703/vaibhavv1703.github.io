@@ -1,8 +1,8 @@
 .footer {
     background-color: var(--highlight-color);
     text-align: center;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     font-size: 1rem;
 }
 
@@ -14,10 +14,4 @@
 .footer__copyright {
     font-size: 0.9rem;
     color: var(--text-color);
-}
-
-.footer__love {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--accent-color);
 }
