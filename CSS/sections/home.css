@@ -23,53 +23,37 @@
     margin-bottom: 0.5rem;
 }
 
-@keyframes neon-border-flicker {
-    0%, 30%, 100% {
-        text-shadow: 
-            0 0 5px #b4952f, 
-            0 0 10px #b4952f, 
-            0 0 20px #b4952f, 
-            0 0 40px #d4b85b, 
-            0 0 80px #d4b85b;
-        opacity: 0.6;
-    }
-    31%, 65% {
-        text-shadow: 
-            0 0 3px #d49639, 
-            0 0 6px #d49639, 
-            0 0 12px #d49639, 
-            0 0 25px #d4b85b, 
-            0 0 50px #d4b85b;
-        opacity: 0.5;
-    }
-    32%, 66% {
-        text-shadow: 
-            0 0 2px #b27417, 
-            0 0 4px #b27417, 
-            0 0 8px #b27417, 
-            0 0 16px #d0b85b, 
-            0 0 32px #d0b85b;
-        opacity: 0.4;
-    }
-    35%, 70% {
-        text-shadow: none;
-        opacity: 0.3;
-    }
+.name {
+    font-family: var(--cursive-text);
+    font-size: 6rem;
+
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #b4952f,
+        0 0 82px #b4952f,
+        0 0 92px #b4952f,
+        0 0 102px #b4952f;
+
+    animation: flicker 5s infinite;
 }
 
-.name {
-    font-size: 4rem;
-    font-weight: bold;
-    color: transparent;
-    -webkit-text-stroke: 2px #b4952f;
-    text-shadow: 
-        0 0 5px #b4952f, 
-        0 0 10px #b4952f, 
-        0 0 20px #b4952f, 
-        0 0 40px #d4b85b, 
-        0 0 80px #d4b85b;
-    margin-bottom: 1rem;
-    animation: neon-border-flicker 3s infinite alternate;
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #b4952f,
+            0 0 80px #b4952f,
+            0 0 90px #b4952f;
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
 }
 
 .role {
@@ -131,5 +115,7 @@
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
