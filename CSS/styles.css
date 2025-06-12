@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 0%;
     height: 5px;
-    background: var(--primary-color);
+    background: var(--accent-color);
     z-index: 10000;
     transition: width 0.1s ease-out;
 }
