@@ -1,6 +1,5 @@
 .skills {
-    padding: 4rem 2rem;
-    padding-top: 6rem;
+    padding-top: 2rem;
     min-height: 70rem;
 }
 
@@ -64,7 +63,7 @@
 
 .podium {
     text-align: center;
-    margin-top: 4rem;
+    padding-top: 10rem;
 }
 
 .podium__title {
@@ -80,7 +79,7 @@
     justify-content: center;
     align-items: flex-end;
     gap: 2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .podium__box {

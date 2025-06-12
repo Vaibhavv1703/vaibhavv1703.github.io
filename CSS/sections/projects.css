@@ -1,3 +1,8 @@
+.projects {
+    min-height: 100vh;
+    padding-top: 2rem;
+}
+
 .carousel {
     display: flex;
     align-items: center;
@@ -23,10 +28,10 @@
     cursor: pointer;
 }
 
-
 .carousel__btn--left:hover, .carousel__btn--right:hover {
     color: var(--accent-color);
 }
+
 .carousel__track {
     position: relative;
     display: flex;

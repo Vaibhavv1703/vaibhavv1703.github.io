@@ -55,9 +55,9 @@
                     <a href="#contact" class="btn primary-btn">Let's Talk!</a>
                 </div>
             </div>
-                <div class="home__image" data-aos="fade-left">
-                    <img src="Assets/VS_dark.png" alt="VS">
-                </div>
+            <div class="home__image" data-aos="fade-left">
+                <img src="Assets/VS_dark.png" alt="VS">
+            </div>
         </div>
     </section>
 
@@ -78,26 +78,48 @@
     </section>
 
     <section class="edu" id="edu">
-        <h2 class="section-title" data-aos="fade-up">Education</h2>
-        <div class="edu__content">
-            <div class="edu__item" data-aos="fade-right">
-                <h3>IIEST, Shibpur (B.Tech)</h3>
-                <p>Computer Science and Technology</p>
-                <p>August 2023 - May 2027</p>
-                <p>CGPA: 8.4</p>
+        <h2 class="section-title">Education</h2>
+        <div class="timeline-horizontal">
+
+            <div class="timeline-item up" data-aos="fade-down">
+                <div class="timeline-content">
+                    <div class="timeline-summary">2019 - 2021</div>
+                    <div class="timeline-details">
+                        <h3>Class X (ICSE)</h3>
+                        <p>Ann Mary School</p>
+                        <p>89%</p>
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
             </div>
-            <div class="edu__item" data-aos="fade-right">
-                <h3>Defence Public School (Senior Secondary)</h3>
-                <p>April 2021 - March 2023</p>
-                <p>Grade: 84.4%</p>
+
+            <div class="timeline-item down" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-summary">2021 - 2023</div>
+                    <div class="timeline-details">
+                        <h3>Class XII (CBSE)</h3>
+                        <p>Defence Public School</p>
+                        <p>86%</p>
+                    </div>
+                </div>
             </div>
-            <div class="edu__item" data-aos="fade-right">
-                <h3>Ann Mary School (Secondary)</h3>
-                <p>April 2020 - March 2021</p>
-                <p>Grade: 89%</p>
+
+            <div class="timeline-item up" data-aos="fade-down">
+                <div class="timeline-content">
+                    <div class="timeline-summary">2023 - Present</div>
+                    <div class="timeline-details">
+                        <h3>B.Tech in Computer Science</h3>
+                        <p>IIEST, Shibpur</p>
+                        <p>8.42 CGPA</p>
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
             </div>
+
         </div>
     </section>
+
 
     <section class="skills" id="skills">
         <h2 class="section-title" data-aos="fade-up">Skills</h2>
@@ -268,7 +290,7 @@
     carousel.addEventListener('mouseleave', resumeAutoRotate);
     carouselBtn.addEventListener('mouseenter', pauseAutoRotate);
     carouselBtn.addEventListener('mouseleave', resumeAutoRotate);
-    
+
     updateProjectCarousel();
 </script>
 
