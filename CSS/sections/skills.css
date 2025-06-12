@@ -3,16 +3,41 @@
     min-height: 70rem;
 }
 
-.skills__content {
-    text-align: center;
+.skills__tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    margin-top: 5rem;
 }
 
-.skills__subtitle {
-    font-size: 2.5rem;
-    font-weight: bold;
+.skills__tab {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--highlight-color);
     color: var(--text-color);
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills__tab:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.skills__tab.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.skills__content {
+    text-align: center;
+    min-height: 25rem;
 }
 
 .skills__grid {

@@ -125,20 +125,50 @@
 
     <section class="skills" id="skills">
         <h2 class="section-title" data-aos="fade-up">Skills</h2>
+
+        <div class="skills__tabs">
+            <button class="skills__tab active" data-target="languagesSection">Software Languages</button>
+            <button class="skills__tab" data-target="webSection">Web Languages</button>
+            <button class="skills__tab" data-target="technologiesSection">Technologies</button>
+        </div>
+
         <div class="skills__content">
-            <h3 class="skills__subtitle">Languages</h3>
-            <div class="skills__grid">
-                <div class="skills__item" data-aos="fade-down-right">
-                    <span>C</span>
+            <div class="skills__group" id="languagesSection">
+                <!-- <h3 class="skills__subtitle">Languages</h3> -->
+                <div class="skills__grid">
+                    <div class="skills__item" data-aos="fade-down-right"><span>C</span></div>
+                    <div class="skills__item" data-aos="fade-down-left"><span>C++</span></div>
+                    <div class="skills__item" data-aos="fade-right"><span>Java</span></div>
+                    <div class="skills__item" data-aos="fade-left"><span>Python</span></div>
+                    <div class="skills__item" data-aos="fade-up-right"><span>C#</span></div>
+                    <div class="skills__item" data-aos="fade-up-left"><span>JavaScript</span></div>
                 </div>
-                <div class="skills__item" data-aos="fade-down-left">
-                    <span>C++</span>
+            </div>
+
+            <div class="skills__group" id="webSection" style="display: none;">
+                <!-- <h3 class="skills__subtitle">Web</h3> -->
+                <div class="skills__grid">
+                    <div class="skills__item"><span>HTML</span></div>
+                    <div class="skills__item"><span>CSS</span></div>
+                    <div class="skills__item"><span>JavaScript</span></div>
+                    <!-- <div class="skills__item"><span>React</span></div> -->
+                    <!-- <div class="skills__item"><span>Tailwind</span></div> -->
+                    <!-- <div class="skills__item"><span>Node.js</span></div> -->
                 </div>
-                <div class="skills__item" data-aos="fade-up-right">
-                    <span>Java</span>
-                </div>
-                <div class="skills__item" data-aos="fade-up-left">
-                    <span>Python</span>
+            </div>
+
+            <div class="skills__group" id="technologiesSection" style="display: none;">
+                <!-- <h3 class="skills__subtitle">Technologies</h3> -->
+                <div class="skills__grid">
+                    <div class="skills__item"><span>Git/GitHub</span></div>
+                    <!-- <div class="skills__item"><span>Firebase</span></div> -->
+                    <!-- <div class="skills__item"><span>Docker</span></div> -->
+                    <!-- <div class="skills__item"><span>Kubernetes</span></div> -->
+                    <div class="skills__item"><span>Kali Linux</span></div>
+                    <div class="skills__item"><span>Visual Studio Code</span></div>
+                    <div class="skills__item"><span>Visual Studio</span></div>
+                    <div class="skills__item"><span>Unity</span></div>
+                    <div class="skills__item"><span>Unreal Engine</span></div>
                 </div>
             </div>
         </div>
@@ -241,6 +271,21 @@
         onComplete: (self) => {
             self.startDelay = 0;
         }
+    });
+
+    const tabButtons = document.querySelectorAll(".skills__tab");
+    const skillGroups = document.querySelectorAll(".skills__group");
+
+    tabButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            tabButtons.forEach(btn => btn.classList.remove("active"));
+
+            skillGroups.forEach(group => group.style.display = "none");
+
+            document.getElementById(button.dataset.target).style.display = "block";
+
+            button.classList.add("active");
+        });
     });
 
     const projectCards = document.querySelectorAll('.carousel__card');
