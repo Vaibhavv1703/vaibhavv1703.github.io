@@ -134,7 +134,6 @@
 
         <div class="skills__content">
             <div class="skills__group" id="languagesSection">
-                <!-- <h3 class="skills__subtitle">Languages</h3> -->
                 <div class="skills__grid">
                     <div class="skills__item" data-aos="fade-down-right"><span>C</span></div>
                     <div class="skills__item" data-aos="fade-down-left"><span>C++</span></div>
@@ -146,11 +145,10 @@
             </div>
 
             <div class="skills__group" id="webSection" style="display: none;">
-                <!-- <h3 class="skills__subtitle">Web</h3> -->
                 <div class="skills__grid">
-                    <div class="skills__item"><span>HTML</span></div>
-                    <div class="skills__item"><span>CSS</span></div>
-                    <div class="skills__item"><span>JavaScript</span></div>
+                    <div class="skills__item" data-aos="fade-down-right"><span>HTML</span></div>
+                    <div class="skills__item" data-aos="fade-down-left"><span>CSS</span></div>
+                    <div class="skills__item" data-aos="fade-up-right"><span>JavaScript</span></div>
                     <!-- <div class="skills__item"><span>React</span></div> -->
                     <!-- <div class="skills__item"><span>Tailwind</span></div> -->
                     <!-- <div class="skills__item"><span>Node.js</span></div> -->
@@ -158,17 +156,16 @@
             </div>
 
             <div class="skills__group" id="technologiesSection" style="display: none;">
-                <!-- <h3 class="skills__subtitle">Technologies</h3> -->
                 <div class="skills__grid">
-                    <div class="skills__item"><span>Git/GitHub</span></div>
+                    <div class="skills__item" data-aos="fade-down-right"><span>Git/GitHub</span></div>
+                    <div class="skills__item" data-aos="fade-down-left"><span>Kali Linux</span></div>
+                    <div class="skills__item" data-aos="fade-right"><span>Visual Studio Code</span></div>
+                    <div class="skills__item" data-aos="fade-left"><span>Visual Studio</span></div>
+                    <div class="skills__item" data-aos="fade-up-right"><span>Unity</span></div>
+                    <div class="skills__item" data-aos="fade-up-left"><span>Unreal Engine</span></div>
                     <!-- <div class="skills__item"><span>Firebase</span></div> -->
                     <!-- <div class="skills__item"><span>Docker</span></div> -->
                     <!-- <div class="skills__item"><span>Kubernetes</span></div> -->
-                    <div class="skills__item"><span>Kali Linux</span></div>
-                    <div class="skills__item"><span>Visual Studio Code</span></div>
-                    <div class="skills__item"><span>Visual Studio</span></div>
-                    <div class="skills__item"><span>Unity</span></div>
-                    <div class="skills__item"><span>Unreal Engine</span></div>
                 </div>
             </div>
         </div>
@@ -285,6 +282,8 @@
             document.getElementById(button.dataset.target).style.display = "block";
 
             button.classList.add("active");
+
+            AOS.init();
         });
     });
 
