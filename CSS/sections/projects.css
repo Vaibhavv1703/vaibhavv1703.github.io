@@ -19,7 +19,7 @@
 
 .carousel__btn--left, .carousel__btn--right {
     background: var(--highlight-color);
-    color: var(--primary-color);
+    color: var(--text-color);
     border: none;
     border-radius: 30%;
     width: 60px;
