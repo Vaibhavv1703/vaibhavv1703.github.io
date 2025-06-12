@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 5rem 0;
 }
 .carousel__btn {
     display: flex;
@@ -41,6 +41,7 @@
     height: 260px;
     overflow: visible;
 }
+
 .carousel__card {
     text-decoration: none;
     color: var(--text-color);
@@ -48,7 +49,7 @@
     left: 50%;
     top: 50%;
     width: 260px;
-    min-height: 180px;
+    min-height: 200px;
     background: var(--highlight-color);
     border-radius: 1rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
@@ -63,12 +64,14 @@
     z-index: 1;
     pointer-events: none;
 }
+
 .carousel__card--left {
     opacity: 1;
     z-index: 2;
     transform: translate(-170%, -50%) scale(0.9);
     pointer-events: auto;
 }
+
 .carousel__card--active {
     opacity: 1;
     z-index: 3;
@@ -76,6 +79,7 @@
     box-shadow: 0 4px 24px rgba(0,0,0,0.15);
     pointer-events: auto;
 }
+
 .carousel__card--right {
     opacity: 1;
     z-index: 2;
