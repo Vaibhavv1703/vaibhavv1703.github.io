@@ -54,7 +54,7 @@
 @media (max-width: 768px) {
     .resume-button {
         left: auto;
-        right: 20px;
+        right: 10px;
         top: 70px; /* ~Below hamburger */
         bottom: auto;
         width: 50px;
