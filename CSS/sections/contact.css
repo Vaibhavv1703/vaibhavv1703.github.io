@@ -50,3 +50,33 @@
 .contact__menu li a:hover {
     color: var(--accent-color);
 }
+
+@media (max-width: 768px) {
+    .contact__nav {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+        padding: 0.5rem 1rem;
+        z-index: 999;
+    }
+
+    .contact__menu {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .contact__menu li a {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .contact__nav::before {
+        display: none; /* No hover gradient on mobile */
+    }
+}

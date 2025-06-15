@@ -15,7 +15,12 @@
 
     <header>
         <nav class="header__nav">
-            <ul class="header__menu">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="header__menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">AboutMe</a></li>
                 <li><a href="#edu">Education</a></li>
@@ -24,6 +29,7 @@
             </ul>
         </nav>
     </header>
+
 
     <section>
         <div class="contact__nav">
@@ -250,6 +256,14 @@
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
     AOS.init();
+
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
 
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;

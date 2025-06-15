@@ -50,3 +50,28 @@
 .resume-button:hover .resume-text {
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+    .resume-button {
+        left: auto;
+        right: 20px;
+        top: 70px; /* ~Below hamburger */
+        bottom: auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 0.8rem;
+        z-index: 500;
+    }
+
+    .resume-button:hover {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 0.8rem;
+    }
+
+    .resume-button .resume-text {
+        display: none; /* Hide label on small screens */
+    }
+}

@@ -51,3 +51,74 @@
 .header__menu li a:hover {
     color: var(--accent-color);
 }
+
+/* Hamburger button style */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1100;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+    .header__nav {
+        top: 0;
+        right: 0;
+        width: auto;
+        padding: 0;
+        height: auto;
+        align-items: flex-end;
+    }
+
+    .hamburger {
+        display: flex;
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1100;
+    }
+
+    .header__menu {
+        position: fixed;
+        top: 0;
+        right: -220px; /* hide it initially off-screen */
+        width: 200px;
+        height: 100vh;
+        background-color: #111;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.4);
+        display: flex;
+    }
+
+    .header__menu.active {
+        right: 0;
+    }
+
+    .header__menu li {
+        width: 100%;
+    }
+
+    .header__menu li a {
+        font-size: 1.2rem;
+        padding: 0.8rem 0.5rem;
+        display: block;
+        width: 100%;
+    }
+}
