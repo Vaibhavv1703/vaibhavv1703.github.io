@@ -56,9 +56,10 @@
 }
 
 .role {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center; /* Optional for smaller screens */
 }
 
 .description {
@@ -105,6 +106,11 @@
     background-position: right;
     transform: translateY(-1.5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.home__image {
+  max-width: 100%;
+  flex: 1;
 }
 
 .typed-cursor {
@@ -163,6 +169,37 @@
     height: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .home__content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .home {
+    margin-left: 0;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .role {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
 
 /* Mobile breakpoint */
 @media (max-width: 600px) {

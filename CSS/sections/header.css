@@ -108,7 +108,7 @@
     }
 
     .header__menu.active {
-        right: 0;
+        right: -4.5rem;
     }
 
     .header__menu li {
