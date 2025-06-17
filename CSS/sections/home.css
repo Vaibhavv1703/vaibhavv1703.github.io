@@ -59,7 +59,8 @@
   word-wrap: break-word;
   word-break: break-word;
   white-space: normal;
-  text-align: center; /* Optional for smaller screens */
+  text-align: center;
+  font-size: 2rem;
 }
 
 .description {

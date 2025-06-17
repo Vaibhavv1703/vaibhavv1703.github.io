@@ -259,9 +259,16 @@
 
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
+    const resumebtn = document.querySelector('.resume-button');
 
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        if(navMenu.classList.contains('active')) {
+            resumebtn.style.display = 'none';
+        } 
+        else {
+            resumebtn.style.display = 'block';
+        }
     });
 
 

@@ -93,22 +93,22 @@
 
     .header__menu {
         position: fixed;
-        top: 0;
         right: -220px; /* hide it initially off-screen */
         width: 200px;
-        height: 100vh;
-        background-color: #111;
+        height: 40vh;
+        background-color: rgba(1, 1, 1, 0.6);
         flex-direction: column;
         justify-content: start;
         align-items: flex-start;
-        padding: 2rem 1rem;
+        padding: 2.5rem 1rem;
         transition: right 0.3s ease;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.4);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
         display: flex;
+        gap: 0;
     }
 
     .header__menu.active {
-        right: -4.5rem;
+        right: -6.5rem;
     }
 
     .header__menu li {
