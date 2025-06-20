@@ -91,3 +91,37 @@
     text-decoration: underline;
     margin-bottom: 0.5rem;
 }
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .carousel__track {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .carousel__card {
+    position: static;
+    flex: 0 0 80%;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    pointer-events: auto;
+    scroll-snap-align: center;
+  }
+
+  .carousel__btn {
+    display: none; /* Hide nav buttons on small screens */
+  }
+}
