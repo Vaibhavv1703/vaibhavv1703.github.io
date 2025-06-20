@@ -101,3 +101,58 @@
   transform-origin: top;
   min-height: 60px;
 }
+
+@media (max-width: 768px) {
+  .edu {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .timeline-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 2rem 1rem;
+  }
+
+  .timeline-horizontal::before {
+    top: 0;
+    left: 20px;
+    transform: none;
+    width: 4px;
+    height: 100%;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 3rem;
+    align-items: flex-start;
+  }
+
+  .timeline-dot {
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+  }
+
+  .timeline-content {
+    position: relative;
+    bottom: auto;
+    top: auto;
+    margin: 0;
+    text-align: left;
+  }
+
+  .timeline-item.up .timeline-content,
+  .timeline-item.down .timeline-content {
+    position: relative;
+    bottom: auto;
+    top: auto;
+    margin: 0;
+    transform-origin: center;
+  }
+
+  .edu .section-title {
+    margin-bottom: 2rem;
+  }
+}
