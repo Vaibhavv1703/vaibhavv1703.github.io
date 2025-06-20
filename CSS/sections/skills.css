@@ -163,3 +163,55 @@
     margin-bottom: 0.5rem;
     object-fit: contain;
 }
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .skills__tabs {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills__tab {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr); /* still 2 columns */
+    gap: 2rem;
+  }
+
+  .skills__item {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .podium {
+    padding-top: 5rem;
+  }
+
+  .podium__boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .podium__box {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .podium__box--left,
+  .podium__box--center,
+  .podium__box--right {
+    height: auto;
+  }
+}
