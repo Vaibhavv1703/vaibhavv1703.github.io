@@ -32,3 +32,27 @@
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+  .about {
+        padding: 2rem 1rem;
+  }
+
+  .about__content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .about__text {
+    margin-left: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about__image img {
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

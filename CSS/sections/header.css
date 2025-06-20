@@ -95,7 +95,7 @@
         position: fixed;
         right: -220px; /* hide it initially off-screen */
         width: 200px;
-        height: 40vh;
+        height: 18rem;
         background-color: rgba(1, 1, 1, 0.6);
         flex-direction: column;
         justify-content: start;
