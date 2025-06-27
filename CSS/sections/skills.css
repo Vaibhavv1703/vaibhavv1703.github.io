@@ -103,7 +103,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 3rem;
     margin-bottom: 5rem;
 }
@@ -136,15 +136,15 @@
 }
 
 .podium__box--left {
-    height: 120px;
+    height: 130px;
 }
 
 .podium__box--center {
-    height: 180px;
+    height: 200px;
 }
 
 .podium__box--right {
-    height: 150px;
+    height: 160px;
 }
 
 .podium__box:hover {
