@@ -69,7 +69,7 @@
 .timeline-summary {
   padding: 16px 20px;
   font-weight: bold;
-  background: var(--accent-color);
+  background: #dfab00;
 }
 
 .timeline-details {

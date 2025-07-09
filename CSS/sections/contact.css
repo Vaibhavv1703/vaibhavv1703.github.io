@@ -40,7 +40,7 @@
 .contact__menu li a {
     text-decoration: none;
     font-family: var(--cursive-text);
-    color: var(--text-color);
+    color: #f5f5f5;
     font-size: 2rem;
     padding: 0.75rem 1rem;
     border-radius: 10px;
@@ -48,7 +48,7 @@
 }
 
 .contact__menu li a:hover {
-    color: var(--accent-color);
+    color: #dfab00;
 }
 
 @media (max-width: 768px) {
@@ -62,7 +62,7 @@
     flex-direction: row;
     justify-content: center;
     padding: 1rem 0;
-    background: rgba(0, 0, 0, 0.8); /* Optional: add slight background */
+    background: rgba(0, 0, 0, 0.8);
   }
 
     .contact__menu {
@@ -76,6 +76,6 @@
     }
 
     .contact__nav::before {
-        display: none; /* No hover gradient on mobile */
+        display: none;
     }
 }

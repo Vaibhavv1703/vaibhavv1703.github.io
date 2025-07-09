@@ -16,8 +16,8 @@
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 30px;
-    background-color: var(--highlight-color);
-    color: var(--text-color);
+    background-color: #3a3d5c;
+    color: #f5f5f5;
     font-weight: bold;
     font-size: 1.2rem;
     cursor: pointer;
@@ -26,12 +26,12 @@
 }
 
 .skills__tab:hover {
-    background-color: var(--accent-color);
+    background-color: #dfab00;
     color: #fff;
 }
 
 .skills__tab.active {
-    background-color: var(--primary-color);
+    background-color: #333333;
     color: #fff;
 }
 
@@ -50,20 +50,20 @@
 }
 
 .skills__item {
-    background-color: var(--highlight-color);
+    background-color: #3a3d5c;
     padding: 2rem 3rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: #f5f5f5;
     position: relative;
     transition: all 0.3s ease;
 }
 
 .skills__item:hover {
-    color: var(--accent-color);
+    color: #dfab00;
     transition: all 1s ease;
 }
 
@@ -72,7 +72,7 @@
     display: block;
     width: 100px;
     height: 2px;
-    background-color: var(--accent-color);
+    background-color: #dfab00;
     position: absolute;
     top: 0;
     left: 50%;
@@ -83,7 +83,7 @@
 
 .skills__item:hover::before {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: #333333;
 }
 
 .podium {
@@ -96,7 +96,7 @@
     font-weight: bold;
     margin-bottom: 2rem;
     letter-spacing: 2px;
-    color: var(--text-color);
+    color: #f5f5f5;
 }
 
 .podium__boxes {
@@ -109,8 +109,8 @@
 }
 
 .podium__box {
-    background-color: var(--highlight-color);
-    color: var(--text-color);
+    background-color: #3a3d5c;
+    color: #f5f5f5;
     text-align: center;
     padding: 1.5rem;
     border-radius: 10px;
@@ -127,12 +127,12 @@
 .podium__box h4 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: #f5f5f5;
 }
 
 .podium__box p {
     font-size: 1rem;
-    color: var(--text-color);
+    color: #f5f5f5;
 }
 
 .podium__box--left {
@@ -153,7 +153,7 @@
 }
 
 .podium__box:hover h4 {
-    color: var(--accent-color);
+    color: #dfab00;
     transition: all 0.6s ease;
 }
 

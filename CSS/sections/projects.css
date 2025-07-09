@@ -18,8 +18,8 @@
 }
 
 .carousel__btn--left, .carousel__btn--right {
-    background: var(--highlight-color);
-    color: var(--text-color);
+    background: #3a3d5c;
+    color: #f5f5f5;
     border: none;
     border-radius: 30%;
     width: 60px;
@@ -29,7 +29,7 @@
 }
 
 .carousel__btn--left:hover, .carousel__btn--right:hover {
-    color: var(--accent-color);
+    color: #dfab00;
 }
 
 .carousel__track {
@@ -44,13 +44,13 @@
 
 .carousel__card {
     text-decoration: none;
-    color: var(--text-color);
+    color: #f5f5f5;
     position: absolute;
     left: 50%;
     top: 50%;
     width: 260px;
     min-height: 200px;
-    background: var(--highlight-color);
+    background: #3a3d5c;
     border-radius: 1rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     padding: 1.5rem 2rem;

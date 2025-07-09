@@ -18,7 +18,7 @@
 
 .greeting {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: #f5f5f5;
     margin-bottom: 0.5rem;
 }
 
@@ -65,7 +65,7 @@
 
 .description {
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: #f5f5f5;
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -88,7 +88,7 @@
     background: linear-gradient(to right, var(--primary-color), var(--accent-color));
     background-size: 200%;
     background-position: left;
-    color: var(--text-color);
+    color: #f5f5f5;
     font-weight: bold;
     font-size: 1.2rem;
     text-transform: uppercase;
