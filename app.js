@@ -48,7 +48,7 @@ tabButtons.forEach(button => {
 
         skillGroups.forEach(group => group.style.display = "none");
 
-        document.getElementById(button.dataset.target).style.display = "block";
+        document.getElementById(button.dataset.target).style.display = "flex";
 
         button.classList.add("active");
     });

@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link href="CSS/styles.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <title>Vaibhav Singh | Portfolio</title>
 </head>
@@ -72,7 +73,8 @@
         <h2 class="section-title" data-aos="fade-up">About Me</h2>
         <div class="about__content">
             <div class="about__text" data-aos="fade-right">
-                <p>Hello, I'm Vaibhav Singh, a junior at IIEST, Shibpur. I'm a passionate developer with a strong
+                <p>Hello, I'm Vaibhav Singh, a pre-final year student at IIEST, Shibpur. I'm a passionate developer with
+                    a strong
                     interest in solving real-world problems using technology. I specialize in Data Structures and
                     Algorithms (DSA) and have experience working with C++, Java and Python.</p>
                 <p>I am always eager to learn new technologies and apply my skills to impactful projects. My goal is
@@ -132,46 +134,63 @@
         <h2 class="section-title" data-aos="fade-up">Skills</h2>
 
         <div class="skills__tabs">
-            <button class="skills__tab active" data-target="languagesSection">Software Languages</button>
+            <button class="skills__tab active" data-target="allSection">All</button>
+            <button class="skills__tab" data-target="languagesSection">Software Languages</button>
             <button class="skills__tab" data-target="webSection">Web Languages</button>
             <button class="skills__tab" data-target="technologiesSection">Technologies</button>
         </div>
 
         <div class="skills__content">
-            <div class="skills__group" id="languagesSection">
-                <div class="skills__grid">
-                    <div class="skills__item" data-aos="fade-down-right"><span>C</span></div>
-                    <div class="skills__item" data-aos="fade-down-left"><span>C++</span></div>
-                    <div class="skills__item" data-aos="fade-right"><span>Java</span></div>
-                    <div class="skills__item" data-aos="fade-left"><span>Python</span></div>
-                    <div class="skills__item" data-aos="fade-up-right"><span>C#</span></div>
-                    <div class="skills__item" data-aos="fade-up-left"><span>JavaScript</span></div>
-                </div>
+            <div class="skills__group" id="allSection">
+                <i class="devicon-c-plain colored skills__item"></i>
+                <i class="devicon-cplusplus-plain colored skills__item"></i>
+                <i class="devicon-java-plain colored skills__item"></i>
+                <i class="devicon-python-plain colored skills__item"></i>
+                <i class="devicon-csharp-plain colored skills__item"></i>
+                <i class="devicon-javascript-plain colored skills__item"></i>
+                <i class="devicon-html5-plain colored skills__item"></i>
+                <i class="devicon-css3-plain colored skills__item"></i>
+                <i class="devicon-nodejs-plain colored skills__item"></i>
+                <i class="devicon-linux-plain skills__item"></i>
+                <i class="devicon-git-plain colored skills__item"></i>
+                <i class="devicon-github-original skills__item"></i>
+                <i class="devicon-vscode-plain colored skills__item"></i>
+                <i class="devicon-visualstudio-plain colored skills__item"></i>
+                <i class="devicon-unity-original skills__item"></i>
+                <i class="devicon-unrealengine-original skills__item"></i>
+            </div>
+
+            <div class="skills__group" id="languagesSection" style="display: none;">
+                <i class="devicon-c-plain colored skills__item"></i>
+                <i class="devicon-cplusplus-plain colored skills__item"></i>
+                <i class="devicon-java-plain colored skills__item"></i>
+                <i class="devicon-python-plain colored skills__item"></i>
+                <i class="devicon-csharp-plain colored skills__item"></i>
+                <i class="devicon-javascript-plain colored skills__item"></i>
             </div>
 
             <div class="skills__group" id="webSection" style="display: none;">
-                <div class="skills__grid">
-                    <div class="skills__item" data-aos="fade-down-right"><span>HTML</span></div>
-                    <div class="skills__item" data-aos="fade-down-left"><span>CSS</span></div>
-                    <div class="skills__item" data-aos="fade-up-right"><span>JavaScript</span></div>
-                    <!-- <div class="skills__item"><span>React</span></div> -->
-                    <!-- <div class="skills__item"><span>Tailwind</span></div> -->
-                    <!-- <div class="skills__item"><span>Node.js</span></div> -->
-                </div>
+                <i class="devicon-html5-plain colored skills__item"></i>
+                <i class="devicon-css3-plain colored skills__item"></i>
+                <i class="devicon-javascript-plain colored skills__item"></i>
+                <i class="devicon-nodejs-plain colored skills__item"></i>
+
+                <!-- <i class="devicon-react-original colored skills__item"></i> -->
+                <!-- <i class="devicon-tailwindcss-plain colored skills__item"></i> -->
             </div>
 
             <div class="skills__group" id="technologiesSection" style="display: none;">
-                <div class="skills__grid">
-                    <div class="skills__item" data-aos="fade-down-right"><span>Git/GitHub</span></div>
-                    <div class="skills__item" data-aos="fade-down-left"><span>Kali Linux</span></div>
-                    <div class="skills__item" data-aos="fade-right"><span>Visual Studio Code</span></div>
-                    <div class="skills__item" data-aos="fade-left"><span>Visual Studio</span></div>
-                    <div class="skills__item" data-aos="fade-up-right"><span>Unity</span></div>
-                    <div class="skills__item" data-aos="fade-up-left"><span>Unreal Engine</span></div>
-                    <!-- <div class="skills__item"><span>Firebase</span></div> -->
-                    <!-- <div class="skills__item"><span>Docker</span></div> -->
-                    <!-- <div class="skills__item"><span>Kubernetes</span></div> -->
-                </div>
+                <i class="devicon-linux-plain skills__item"></i>
+                <i class="devicon-git-plain colored skills__item"></i>
+                <i class="devicon-github-original skills__item"></i>
+                <i class="devicon-vscode-plain colored skills__item"></i>
+                <i class="devicon-visualstudio-plain colored skills__item"></i>
+                <i class="devicon-unity-original skills__item"></i>
+                <i class="devicon-unrealengine-original skills__item"></i>
+
+                <!-- <i class="devicon-firebase-plain colored skills__item"></i> -->
+                <!-- <i class="devicon-docker-plain colored skills__item"></i> -->
+                <!-- <i class="devicon-kubernetes-plain colored skills__item"></i> -->
             </div>
         </div>
 
