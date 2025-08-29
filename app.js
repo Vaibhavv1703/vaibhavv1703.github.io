@@ -1,6 +1,5 @@
 AOS.init();
 
-
 // Hamburger
 const hamburger = document.getElementById('hamburger');
 hamburger.addEventListener('click', () => {

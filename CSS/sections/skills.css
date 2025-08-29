@@ -98,7 +98,6 @@
 }
 
 .skills__item:hover {
-    transform: scale(1.1) translateY(-3px);
     background: #444444;
     border-color: rgba(223, 171, 0, 0.8);
     box-shadow: 
@@ -255,4 +254,49 @@
   .podium__box--right {
     height: auto;
   }
+}
+
+/* Skill names inside boxes on hover */
+.skills__item {
+    position: relative;
+    overflow: hidden;
+}
+
+.skills__item[data-skill]:hover::before {
+    content: attr(data-skill);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(42, 42, 42, 0.95);
+    color: #dfab00;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    border-radius: 13px;
+    z-index: 10;
+    font-family: 'Arial', sans-serif;
+    animation: skillNameFadeIn 0.3s ease-out;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+    padding: 5px;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+@keyframes skillNameFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
