@@ -1,19 +1,19 @@
 .resume-button {
     position: fixed;
     left: 20px;
-    background-color: #333333;
+    background: #333333;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     padding: 0.8rem;
     padding-left: 1rem;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: left;
     gap: 0.5rem;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     z-index: 1000;
     overflow: hidden;
     width: 50px;
@@ -22,13 +22,14 @@
 }
 
 .resume-button:hover {
-    background-color: #dfab00;
+    background: #dfab00;
     color: #f5f5f5;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     width: 120px;
     height: 50px;
     border-radius: 25px;
     padding: 0.8rem 1.2rem;
+    transform: translateY(-2px);
 }
 
 .resume-button i {

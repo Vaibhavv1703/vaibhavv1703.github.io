@@ -45,7 +45,7 @@
     font-size: 1.65rem;
     padding: 0.75rem 1rem;
     border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .header__menu li a:hover {
@@ -62,6 +62,11 @@
     top: 1.5rem;
     right: 1.5rem;
     z-index: 1100;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .hamburger span {
@@ -70,6 +75,10 @@
     background-color: #f5f5f5;
     transition: all 0.3s ease;
     border-radius: 5px;
+}
+
+.hamburger:hover span {
+    background-color: #dfab00;
 }
 
 /* Responsive Nav */
@@ -96,13 +105,15 @@
         right: -220px; /* hide it initially off-screen */
         width: 200px;
         height: 18rem;
-        background-color: rgba(1, 1, 1, 0.6);
+        background: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(15px);
+        border-radius: 15px 0 0 15px;
         flex-direction: column;
         justify-content: start;
         align-items: flex-start;
         padding: 2.5rem 1rem;
         transition: right 0.3s ease;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        box-shadow: -8px 0 25px rgba(0, 0, 0, 0.4);
         display: flex;
         gap: 0;
     }
