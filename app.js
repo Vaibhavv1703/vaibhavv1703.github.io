@@ -138,3 +138,99 @@ fetch("https://alfa-leetcode-api.onrender.com/Vaibhavv_1703/contest")
         rating.innerText = `Max Rating: ${lc_max}`
     })
     .catch(err => console.error("LeetCode API error:", err));
+
+
+// Contact Modal
+const contactModalBtn = document.getElementById('contactModalBtn');
+const contactModal = document.getElementById('contactModal');
+const closeModal = document.getElementById('closeModal');
+const modalOverlay = document.querySelector('.modal__overlay');
+
+function openModal() {
+    contactModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModalFn() {
+    contactModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+contactModalBtn.addEventListener('click', openModal);
+closeModal.addEventListener('click', closeModalFn);
+modalOverlay.addEventListener('click', closeModalFn);
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        closeModalFn();
+    }
+});
+
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
+
+function showStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form__status ${type} show`;
+    
+    setTimeout(() => {
+        formStatus.classList.remove('show');
+    }, 5000);
+}
+
+function setLoadingState(loading) {
+    if (loading) {
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        submitBtn.querySelector('.btn-text').textContent = 'Sending...';
+    } else {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn-text').textContent = 'Send Message';
+    }
+}
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    setLoadingState(true);
+    showStatus('Sending your message...', 'loading');
+    
+    // Get form data
+    const formData = new FormData(contactForm);
+    
+    try {
+        // Check if FormSpree endpoint is configured
+        const formAction = contactForm.getAttribute('action');
+        
+        // Submit to FormSpree or other service
+        const response = await fetch(formAction, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            showStatus('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+            contactForm.reset();
+            
+            // Close modal after 3 seconds
+            setTimeout(() => {
+                closeModalFn();
+            }, 3000);
+        } else {
+            throw new Error('Form submission failed');
+        }
+        
+    } catch (error) {
+        console.error('Form submission error:', error);
+        showStatus('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
+    } finally {
+        setLoadingState(false);
+    }
+});

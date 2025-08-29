@@ -60,7 +60,7 @@
                     Crafting solutions, one line of code at a time.
                 </div>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn primary-btn">Let's Talk!</a>
+                    <button class="btn primary-btn" id="contactModalBtn">Let's Talk!</button>
                 </div>
             </div>
             <div class="home__image" data-aos="fade-left">
@@ -261,6 +261,45 @@
             <button class="carousel__btn--right" data-aos="fade-up-right">&#8594;</button>
         </div>
     </section>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2>Let's Connect!</h2>
+                <button class="modal__close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="modal__form">
+                    <form class="contact__form" id="contactForm" action="https://formspree.io/f/mldwgyor" method="POST">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <input type="text" name="name" id="modalName" class="form__input" placeholder=" " required>
+                                <label for="modalName" class="form__label">Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="email" name="email" id="modalEmail" class="form__input" placeholder=" " required>
+                                <label for="modalEmail" class="form__label">Email</label>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" name="subject" id="modalSubject" class="form__input" placeholder=" ">
+                            <label for="modalSubject" class="form__label">Subject</label>
+                        </div>
+                        <div class="form__group">
+                            <textarea name="message" id="modalMessage" class="form__textarea" placeholder=" " rows="4" required></textarea>
+                            <label for="modalMessage" class="form__label">Message</label>
+                        </div>
+                        <button type="submit" class="btn primary-btn" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                        </button>
+                        <div id="formStatus" class="form__status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer__content">
