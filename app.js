@@ -1,3 +1,52 @@
+// Loading Screen Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const mainContent = document.getElementById('mainContent');
+    const loadingBarFill = document.getElementById('loadingBarFill');
+    const loadingPercentage = document.getElementById('loadingPercentage');
+
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15 + 5; // Random increment between 5-20
+        progress = Math.min(progress, 100);
+        
+        loadingBarFill.style.width = progress + '%';
+        loadingPercentage.textContent = Math.floor(progress) + '%';
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            
+            // Add a small delay before hiding the loading screen
+            setTimeout(() => {
+                loadingScreen.classList.add('fade-out');
+                mainContent.classList.add('show');
+                
+                // Remove loading screen from DOM after fade out
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 800);
+            }, 800);
+        }
+    }, 100); // Update every 100ms
+
+    // Ensure minimum loading time of 2 seconds
+    setTimeout(() => {
+        if (progress < 100) {
+            progress = 100;
+            loadingBarFill.style.width = '100%';
+            loadingPercentage.textContent = '100%';
+        }
+    }, 2000);
+});
+
+// Initialize AOS after loading screen
+function initializeWebsite() {
+    AOS.init();
+}
+
+// Call initialization after a delay to ensure smooth transition
+setTimeout(initializeWebsite, 3000);
+
 AOS.init();
 
 // Hamburger
