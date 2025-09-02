@@ -56,7 +56,8 @@
     .resume-button {
         left: auto;
         right: 10px;
-        top: 70px; /* ~Below hamburger */
+        position: fixed;
+        top: 70px;
         bottom: auto;
         width: 50px;
         height: 50px;
@@ -73,6 +74,6 @@
     }
 
     .resume-button .resume-text {
-        display: none; /* Hide label on small screens */
+        display: none;
     }
 }

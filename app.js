@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
-                    // Initialize URL routing after loading screen is done
+                    // Route Init
                     initializeRouting();
                 }, 800);
             }, 800);
@@ -38,32 +38,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
 });
 
-// URL Routing System
+// URL Routing
 function initializeRouting() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.header__menu a[href^="#"]');
     
-    // Function to update URL and navigate to section
+    // Navigate Section
     function navigateToSection(sectionId) {
-        // Update URL without page reload
+        // Update URL
         if (sectionId && sectionId !== 'home') {
             window.history.pushState(null, null, `#${sectionId}`);
         } else {
-            // For home section, remove hash
+            // Home Section
             window.history.pushState(null, null, window.location.pathname);
         }
         
-        // DON'T update active navigation here - let the scroll handler do it
-        // This allows intermediate sections to highlight during scroll
-        
-        // Scroll to section smoothly
+        // Smooth Scroll
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth' });
         }
     }
     
-    // Function to update active navigation link
+    // Update Navigation
     function updateActiveNavigation(currentSection) {
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -74,16 +71,16 @@ function initializeRouting() {
         });
     }
     
-    // Function to get current section based on scroll position
+    // Current Section
     function getCurrentSection() {
         let currentSection = 'home';
-        const scrollPosition = window.scrollY + window.innerHeight / 3; // More responsive detection
+        const scrollPosition = window.scrollY + 100;
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
+            const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight + 100) {
                 currentSection = section.id;
             }
         });
@@ -93,38 +90,65 @@ function initializeRouting() {
     
     // Handle scroll events to update URL
     let lastSection = 'home';
-    window.addEventListener('scroll', () => {
+    let isScrolling = false;
+    
+    // Throttle Performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+    
+    const handleScroll = throttle(() => {
         const currentSection = getCurrentSection();
         
-        // Update immediately if section changed (no timeout)
+        // Section Changed
         if (currentSection !== lastSection) {
+            // Smooth Transition
+            const navLinks = document.querySelectorAll('.header__menu a');
+            navLinks.forEach(link => link.classList.add('transitioning'));
+            
             lastSection = currentSection;
             
-            // Update URL smoothly
+            // Update URL
             if (currentSection === 'home') {
                 window.history.replaceState(null, null, window.location.pathname);
             } else {
                 window.history.replaceState(null, null, `#${currentSection}`);
             }
             updateActiveNavigation(currentSection);
+            
+            // Remove Transition
+            setTimeout(() => {
+                navLinks.forEach(link => link.classList.remove('transitioning'));
+            }, 400);
         }
-    });
+    }, 16);
     
-    // Handle direct URL navigation (when someone visits yoursite.com/#skills)
+    window.addEventListener('scroll', handleScroll);
+    
+    // Direct Navigation
     function handleInitialHash() {
         const hash = window.location.hash.substring(1);
         if (hash && document.getElementById(hash)) {
-            // Delay to ensure page is fully loaded
+            // Delay Load
             setTimeout(() => {
                 navigateToSection(hash);
             }, 100);
         } else {
-            // Default to home section
+            // Default Home
             updateActiveNavigation('home');
         }
     }
     
-    // Handle browser back/forward buttons
+    // Browser Navigation
     window.addEventListener('popstate', () => {
         const hash = window.location.hash.substring(1) || 'home';
         const targetSection = document.getElementById(hash);
@@ -134,7 +158,7 @@ function initializeRouting() {
         }
     });
     
-    // Handle navigation link clicks
+    // Nav Clicks
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -143,7 +167,7 @@ function initializeRouting() {
         });
     });
     
-    // Initialize routing
+    // Init Routing
     handleInitialHash();
 }
 
@@ -170,7 +194,7 @@ hamburger.addEventListener('click', () => {
 });
 
 
-// Scroll
+// Progress Bar
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -179,7 +203,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Typed
+// Text Animation
 var typed = new Typed('#typed', {
     strings: ['Coder.', 'Developer.', 'Techie.', 'Engineer.', 'Designer.', 'Creator.', 'Gamer.'],
     typeSpeed: Math.floor(Math.random() * (100 - 60 + 1)) + 60,
@@ -193,7 +217,7 @@ var typed = new Typed('#typed', {
 });
 
 
-// Skills
+// Skills Management
 const tabButtons = document.querySelectorAll(".skills__tab");
 
 function randomizeAllSkills() {
@@ -230,7 +254,7 @@ tabButtons.forEach(button => {
 });
 
 
-// Carousel
+// Project Carousel
 let activeIdx = 0;
 const projectCards = document.querySelectorAll('.carousel__card');
 const leftBtn = document.querySelector('.carousel__btn--left');
@@ -285,7 +309,7 @@ carouselBtn.addEventListener('mouseleave', resumeAutoRotate);
 updateProjectCarousel();
 
 
-// CF API
+// Codeforces API
 fetch("https://codeforces.com/api/user.info?handles=Vaibhavv1703")
     .then(res => res.json())
     .then(data => {
@@ -298,7 +322,7 @@ fetch("https://codeforces.com/api/user.info?handles=Vaibhavv1703")
         rating.innerText = `Max Rating: ${cf_max}`
     });
 
-// LC API
+// Leetcode API
 fetch("https://alfa-leetcode-api.onrender.com/Vaibhavv_1703/contest")
     .then(res => res.json())
     .then(data => {

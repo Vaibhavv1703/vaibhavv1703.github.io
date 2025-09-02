@@ -45,7 +45,7 @@
     transition: all 0.3s ease;
 }
 
-/*Scrollbar*/
+/* Scrollbar */
 .modal__content::-webkit-scrollbar {
     width: 8px;
 }
@@ -250,7 +250,7 @@
     color: #ffc107;
 }
 
-/* Responsive Design */
+/* Mobile Media */
 @media (max-width: 768px) {
     .modal__content {
         width: 95%;

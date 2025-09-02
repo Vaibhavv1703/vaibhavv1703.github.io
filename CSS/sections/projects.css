@@ -182,6 +182,6 @@
   }
 
   .carousel__btn {
-    display: none; /* Hide nav buttons on small screens */
+    display: none;
   }
 }

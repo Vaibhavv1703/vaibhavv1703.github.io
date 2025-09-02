@@ -1,6 +1,7 @@
 .skills {
     padding-top: 2rem;
-    min-height: 70rem;
+    padding-bottom: 1rem;
+    /* min-height: 100vh; */
 }
 
 .skills__tabs {
@@ -66,7 +67,7 @@
 
 .skills__content {
     text-align: center;
-    min-height: 25rem;
+    min-height: 15rem;
 }
 
 .skills__group {
@@ -77,7 +78,7 @@
     gap: 2rem;
     margin: 0 auto;
     max-width: 1000px;
-    min-height: 300px;
+    min-height: 200px;
 }
 
 .skills__item {
@@ -107,7 +108,7 @@
 
 .podium {
     text-align: center;
-    padding-top: 10rem;
+    padding-top: 3rem;
 }
 
 .podium__title {
@@ -123,8 +124,8 @@
     justify-content: center;
     align-items: flex-end;
     gap: 1rem;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .podium__box {
@@ -262,7 +263,9 @@
     overflow: hidden;
 }
 
-.skills__item[data-skill]:hover::before {
+
+/* Skill Hover */
+.skills__item[data-skill]:hover::after {
     content: attr(data-skill);
     position: absolute;
     top: 0;
