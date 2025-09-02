@@ -1,4 +1,4 @@
-// Loading Screen Logic
+// Loading Screen
 document.addEventListener('DOMContentLoaded', function() {
     const loadingScreen = document.getElementById('loadingScreen');
     const mainContent = document.getElementById('mainContent');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let progress = 0;
     const interval = setInterval(() => {
-        progress += Math.random() * 15 + 5; // Random increment between 5-20
+        progress += Math.random() * 15 + 5;
         progress = Math.min(progress, 100);
         
         loadingBarFill.style.width = progress + '%';
@@ -16,20 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (progress >= 100) {
             clearInterval(interval);
             
-            // Add a small delay before hiding the loading screen
             setTimeout(() => {
                 loadingScreen.classList.add('fade-out');
                 mainContent.classList.add('show');
                 
-                // Remove loading screen from DOM after fade out
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
                 }, 800);
             }, 800);
         }
-    }, 100); // Update every 100ms
+    }, 100);
 
-    // Ensure minimum loading time of 2 seconds
     setTimeout(() => {
         if (progress < 100) {
             progress = 100;
@@ -39,12 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
 });
 
-// Initialize AOS after loading screen
 function initializeWebsite() {
     AOS.init();
 }
 
-// Call initialization after a delay to ensure smooth transition
 setTimeout(initializeWebsite, 3000);
 
 AOS.init();
@@ -89,6 +84,23 @@ var typed = new Typed('#typed', {
 
 // Skills
 const tabButtons = document.querySelectorAll(".skills__tab");
+
+function randomizeAllSkills() {
+    const allSkillsSection = document.getElementById('allSection');
+    const skillItems = Array.from(allSkillsSection.children);
+    
+    for (let i = skillItems.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [skillItems[i], skillItems[j]] = [skillItems[j], skillItems[i]];
+    }
+    allSkillsSection.innerHTML = '';
+    skillItems.forEach(item => allSkillsSection.appendChild(item));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    randomizeAllSkills();
+});
+
 tabButtons.forEach(button => {
     const skillGroups = document.querySelectorAll(".skills__group");
     button.addEventListener("click", () => {
@@ -99,6 +111,10 @@ tabButtons.forEach(button => {
         document.getElementById(button.dataset.target).style.display = "flex";
 
         button.classList.add("active");
+        
+        if (button.dataset.target === 'allSection') {
+            randomizeAllSkills();
+        }
     });
 });
 
@@ -188,7 +204,6 @@ fetch("https://alfa-leetcode-api.onrender.com/Vaibhavv_1703/contest")
     .catch(err => console.error("LeetCode API error:", err));
 
 
-// Contact Modal
 const contactModalBtn = document.getElementById('contactModalBtn');
 const contactModal = document.getElementById('contactModal');
 const closeModal = document.getElementById('closeModal');
@@ -208,14 +223,12 @@ contactModalBtn.addEventListener('click', openModal);
 closeModal.addEventListener('click', closeModalFn);
 modalOverlay.addEventListener('click', closeModalFn);
 
-// Close modal with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && contactModal.classList.contains('active')) {
         closeModalFn();
     }
 });
 
-// Contact Form Submission
 const contactForm = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const formStatus = document.getElementById('formStatus');
@@ -247,14 +260,11 @@ contactForm.addEventListener('submit', async (e) => {
     setLoadingState(true);
     showStatus('Sending your message...', 'loading');
     
-    // Get form data
     const formData = new FormData(contactForm);
     
     try {
-        // Check if FormSpree endpoint is configured
         const formAction = contactForm.getAttribute('action');
         
-        // Submit to FormSpree or other service
         const response = await fetch(formAction, {
             method: 'POST',
             body: formData,
@@ -267,7 +277,6 @@ contactForm.addEventListener('submit', async (e) => {
             showStatus('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
             contactForm.reset();
             
-            // Close modal after 3 seconds
             setTimeout(() => {
                 closeModalFn();
             }, 3000);
