@@ -45,11 +45,19 @@
     font-size: 1.65rem;
     padding: 0.75rem 1rem;
     border-radius: 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
 .header__menu li a:hover {
     color: #dfab00;
+}
+
+.header__menu li a.active {
+    color: #dfab00;
+    background: rgba(223, 171, 0, 0.1);
+    transform: translateX(-5px);
+    text-shadow: 0 0 10px rgba(223, 171, 0, 0.5);
+    border-left: 3px solid #dfab00;
 }
 
 /* Hamburger button style */

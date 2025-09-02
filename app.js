@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
+                    // Initialize URL routing after loading screen is done
+                    initializeRouting();
                 }, 800);
             }, 800);
         }
@@ -35,6 +37,115 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 2000);
 });
+
+// URL Routing System
+function initializeRouting() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.header__menu a[href^="#"]');
+    
+    // Function to update URL and navigate to section
+    function navigateToSection(sectionId) {
+        // Update URL without page reload
+        if (sectionId && sectionId !== 'home') {
+            window.history.pushState(null, null, `#${sectionId}`);
+        } else {
+            // For home section, remove hash
+            window.history.pushState(null, null, window.location.pathname);
+        }
+        
+        // DON'T update active navigation here - let the scroll handler do it
+        // This allows intermediate sections to highlight during scroll
+        
+        // Scroll to section smoothly
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    // Function to update active navigation link
+    function updateActiveNavigation(currentSection) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const linkSection = link.getAttribute('href').substring(1);
+            if (linkSection === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Function to get current section based on scroll position
+    function getCurrentSection() {
+        let currentSection = 'home';
+        const scrollPosition = window.scrollY + window.innerHeight / 3; // More responsive detection
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.id;
+            }
+        });
+        
+        return currentSection;
+    }
+    
+    // Handle scroll events to update URL
+    let lastSection = 'home';
+    window.addEventListener('scroll', () => {
+        const currentSection = getCurrentSection();
+        
+        // Update immediately if section changed (no timeout)
+        if (currentSection !== lastSection) {
+            lastSection = currentSection;
+            
+            // Update URL smoothly
+            if (currentSection === 'home') {
+                window.history.replaceState(null, null, window.location.pathname);
+            } else {
+                window.history.replaceState(null, null, `#${currentSection}`);
+            }
+            updateActiveNavigation(currentSection);
+        }
+    });
+    
+    // Handle direct URL navigation (when someone visits yoursite.com/#skills)
+    function handleInitialHash() {
+        const hash = window.location.hash.substring(1);
+        if (hash && document.getElementById(hash)) {
+            // Delay to ensure page is fully loaded
+            setTimeout(() => {
+                navigateToSection(hash);
+            }, 100);
+        } else {
+            // Default to home section
+            updateActiveNavigation('home');
+        }
+    }
+    
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash.substring(1) || 'home';
+        const targetSection = document.getElementById(hash);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            updateActiveNavigation(hash);
+        }
+    });
+    
+    // Handle navigation link clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('href').substring(1);
+            navigateToSection(sectionId);
+        });
+    });
+    
+    // Initialize routing
+    handleInitialHash();
+}
 
 function initializeWebsite() {
     AOS.init();
