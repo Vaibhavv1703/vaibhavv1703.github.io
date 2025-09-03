@@ -181,17 +181,49 @@ AOS.init();
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
-hamburger.addEventListener('click', () => {
+if (hamburger) {
+    function toggleMenu() {
+        const navMenu = document.getElementById('navMenu');
+        const resumebtn = document.querySelector('.resume-button');
+        
+        if (navMenu) {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        if (resumebtn) {
+            if (navMenu && navMenu.classList.contains('active')) {
+                resumebtn.style.display = 'none';
+            } else {
+                resumebtn.style.display = 'block';
+            }
+        }
+    }
+    
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        toggleMenu();
+    });
+    
+    // Close menu when clicking on menu items (mobile UX)
     const navMenu = document.getElementById('navMenu');
-    const resumebtn = document.querySelector('.resume-button');
-    navMenu.classList.toggle('active');
-    if (navMenu.classList.contains('active')) {
-        resumebtn.style.display = 'none';
+    if (navMenu) {
+        const menuLinks = navMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    const resumebtn = document.querySelector('.resume-button');
+                    if (resumebtn) {
+                        resumebtn.style.display = 'block';
+                    }
+                }
+            });
+        });
     }
-    else {
-        resumebtn.style.display = 'block';
-    }
-});
+}
 
 
 // Progress Bar
