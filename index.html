@@ -91,6 +91,46 @@
         </div>
     </section>
 
+    
+    <section class="modal" id="contactModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2>Let's Connect!</h2>
+                <button class="modal__close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="modal__form">
+                    <form class="contact__form" id="contactForm" action="https://formspree.io/f/mldwgyor" method="POST">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <input type="text" name="name" id="modalName" class="form__input" placeholder=" " required>
+                                <label for="modalName" class="form__label">Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="email" name="email" id="modalEmail" class="form__input" placeholder=" " required>
+                                <label for="modalEmail" class="form__label">Email</label>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" name="subject" id="modalSubject" class="form__input" placeholder=" ">
+                            <label for="modalSubject" class="form__label">Subject</label>
+                        </div>
+                        <div class="form__group">
+                            <textarea name="message" id="modalMessage" class="form__textarea" placeholder=" " rows="4" required></textarea>
+                            <label for="modalMessage" class="form__label">Message</label>
+                        </div>
+                        <button type="submit" class="btn primary-btn" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                        </button>
+                        <div id="formStatus" class="form__status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="about" id="about">
         <h2 class="section-title" data-aos="fade-up">About Me</h2>
         <div class="about__content">
@@ -107,6 +147,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="edu" id="edu">
         <h2 class="section-title">Education</h2>
@@ -235,11 +276,12 @@
                     data-aos="fade-up-left">
                     <img src="Assets/lc.png" alt="Leetcode Logo" class="podium__image">
                     <h4>Leetcode</h4>
-                    <p class="LC_rating">Max Rating: 1658</p>
+                    <p class="LC_rating">Max Rating: 1715</p>
                 </a>
             </div>
         </div>
     </section>
+
 
     <section class="projects" id="projects">
         <h2 class="section-title" data-aos="fade-up">Projects</h2>
@@ -258,7 +300,7 @@
                 </a>
                 <a href="https://github.com/Vaibhavv1703/Quidditch-Quest" class="carousel__card">
                     <h3>Quidditch Quest</h3>
-                    <p>A browser-based game inspired by Harry Potter’s Quidditch, offering engaging gameplay and magical
+                    <p>A browser-based game inspired by Harry Potter's Quidditch, offering engaging gameplay and magical
                         challenges for fans and casual gamers alike.</p>
                 </a>
                 <a href="https://github.com/Vaibhavv1703/Expense-Manager" class="carousel__card">
@@ -284,44 +326,6 @@
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal" id="contactModal">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <div class="modal__header">
-                <h2>Let's Connect!</h2>
-                <button class="modal__close" id="closeModal">&times;</button>
-            </div>
-            <div class="modal__body">
-                <div class="modal__form">
-                    <form class="contact__form" id="contactForm" action="https://formspree.io/f/mldwgyor" method="POST">
-                        <div class="form__row">
-                            <div class="form__group">
-                                <input type="text" name="name" id="modalName" class="form__input" placeholder=" " required>
-                                <label for="modalName" class="form__label">Name</label>
-                            </div>
-                            <div class="form__group">
-                                <input type="email" name="email" id="modalEmail" class="form__input" placeholder=" " required>
-                                <label for="modalEmail" class="form__label">Email</label>
-                            </div>
-                        </div>
-                        <div class="form__group">
-                            <input type="text" name="subject" id="modalSubject" class="form__input" placeholder=" ">
-                            <label for="modalSubject" class="form__label">Subject</label>
-                        </div>
-                        <div class="form__group">
-                            <textarea name="message" id="modalMessage" class="form__textarea" placeholder=" " rows="4" required></textarea>
-                            <label for="modalMessage" class="form__label">Message</label>
-                        </div>
-                        <button type="submit" class="btn primary-btn" id="submitBtn">
-                            <span class="btn-text">Send Message</span>
-                        </button>
-                        <div id="formStatus" class="form__status"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer class="footer">
         <div class="footer__content">
