@@ -15,17 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (progress >= 100) {
             clearInterval(interval);
-            
             setTimeout(() => {
                 loadingScreen.classList.add('fade-out');
-                mainContent.classList.add('show');
-                
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
-                    // Route Init
+                    mainContent.classList.add('show');
                     initializeRouting();
                 }, 800);
-            }, 800);
+            }, 400);
         }
     }, 100);
 
@@ -45,22 +42,22 @@ function initializeRouting() {
     
     function navigateToSection(sectionId) {
         if (sectionId && sectionId !== 'home') {
-            window.history.pushState(null, null, `#${sectionId}`);
+            history.pushState(null, null, `#${sectionId}`);
         } else {
-            window.history.pushState(null, null, window.location.pathname);
+            history.pushState(null, null, window.location.pathname);
         }
         
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth' });
+            updateActiveNavigation(sectionId);
         }
     }
     
     function updateActiveNavigation(currentSection) {
         navLinks.forEach(link => {
             link.classList.remove('active');
-            const linkSection = link.getAttribute('href').substring(1);
-            if (linkSection === currentSection) {
+            if (link.getAttribute('href') === `#${currentSection}`) {
                 link.classList.add('active');
             }
         });
@@ -71,12 +68,10 @@ function initializeRouting() {
         const scrollPosition = window.scrollY + 100;
         
         sections.forEach(section => {
-            if (section.id === 'contactModal') return;
-            
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight + 100) {
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 currentSection = section.id;
             }
         });
@@ -103,21 +98,15 @@ function initializeRouting() {
         const currentSection = getCurrentSection();
         
         if (currentSection !== lastSection) {
-            const navLinks = document.querySelectorAll('.header__menu a');
-            navLinks.forEach(link => link.classList.add('transitioning'));
-            
-            lastSection = currentSection;
-            
-            if (currentSection === 'home') {
-                window.history.replaceState(null, null, window.location.pathname);
-            } else {
-                window.history.replaceState(null, null, `#${currentSection}`);
-            }
             updateActiveNavigation(currentSection);
             
-            setTimeout(() => {
-                navLinks.forEach(link => link.classList.remove('transitioning'));
-            }, 400);
+            if (currentSection !== 'home') {
+                history.replaceState(null, null, `#${currentSection}`);
+            } else {
+                history.replaceState(null, null, window.location.pathname);
+            }
+            
+            lastSection = currentSection;
         }
     }, 16);
     
@@ -151,7 +140,6 @@ function initializeRouting() {
         });
     });
     
-    // Init Routing
     handleInitialHash();
 }
 
@@ -198,6 +186,7 @@ if (hamburger) {
                 if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                     hamburger.classList.remove('active');
+                    
                     const resumebtn = document.querySelector('.resume-button');
                     if (resumebtn) {
                         resumebtn.style.display = 'block';
@@ -208,7 +197,6 @@ if (hamburger) {
     }
 }
 
-
 // Progress Bar
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
@@ -216,7 +204,6 @@ window.addEventListener('scroll', () => {
     const scrollPercent = (scrollTop / docHeight) * 100;
     document.querySelector('.progress-bar').style.width = scrollPercent + '%';
 });
-
 
 // Text Animation
 var typed = new Typed('#typed', {
@@ -230,7 +217,6 @@ var typed = new Typed('#typed', {
         self.startDelay = 0;
     }
 });
-
 
 // Skills Management
 const tabButtons = document.querySelectorAll(".skills__tab");
@@ -267,7 +253,6 @@ tabButtons.forEach(button => {
         }
     });
 });
-
 
 // Project Carousel
 let activeIdx = 0;
@@ -323,7 +308,6 @@ carouselBtn.addEventListener('mouseenter', pauseAutoRotate);
 carouselBtn.addEventListener('mouseleave', resumeAutoRotate);
 updateProjectCarousel();
 
-
 // Codeforces API
 fetch("https://codeforces.com/api/user.info?handles=Vaibhavv1703")
     .then(res => res.json())
@@ -352,7 +336,6 @@ fetch("https://alfa-leetcode-api.onrender.com/Vaibhavv_1703/contest")
         rating.innerText = `Max Rating: ${lc_max}`
     })
     .catch(err => console.error("LeetCode API error:", err));
-
 
 const contactModalBtn = document.getElementById('contactModalBtn');
 const contactModal = document.getElementById('contactModal');
@@ -424,12 +407,11 @@ contactForm.addEventListener('submit', async (e) => {
         });
         
         if (response.ok) {
-            showStatus('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+            showStatus('Thank you! Your message has been sent successfully.', 'success');
             contactForm.reset();
-            
             setTimeout(() => {
                 closeModalFn();
-            }, 3000);
+            }, 2000);
         } else {
             throw new Error('Form submission failed');
         }
@@ -441,3 +423,191 @@ contactForm.addEventListener('submit', async (e) => {
         setLoadingState(false);
     }
 });
+
+// Konami Code Easter Egg
+(function() {
+    const konamiCode = [
+        'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+        'KeyB', 'KeyA'
+    ];
+    
+    let userInput = [];
+    let matrixActive = false;
+    
+    function createMatrixRain() {
+        const matrixContainer = document.getElementById('matrixRain');
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*(){}[]<>?/\\|~`';
+        const codeSnippets = [
+            'function()', 'const', 'let', 'var', 'if()', 'else', 'for()', 'while()',
+            'class', 'return', 'import', 'export', 'async', 'await', '{}', '[]',
+            'console.log()', 'document', 'window', 'true', 'false', 'null'
+        ];
+        
+        matrixContainer.innerHTML = '';
+        
+        const columns = Math.floor(window.innerWidth / 20);
+        
+        for (let i = 0; i < columns; i++) {
+            createMatrixColumn(matrixContainer, i * 20, characters, codeSnippets);
+        }
+        
+        matrixContainer.classList.add('active');
+        matrixActive = true;
+        
+        const preventScroll = (e) => {
+            e.preventDefault();
+        };
+        
+        document.addEventListener('wheel', preventScroll, { passive: false });
+        
+        function exitMatrixOnKeyPress(e) {
+            document.removeEventListener('wheel', preventScroll);
+            
+            stopMatrixRain();
+            document.removeEventListener('keydown', exitMatrixOnKeyPress);
+        }
+        
+        document.addEventListener('keydown', exitMatrixOnKeyPress);
+    }
+    
+    function createMatrixColumn(container, x, characters, codeSnippets) {
+        const char = document.createElement('div');
+        char.className = 'matrix-char';
+        char.style.left = x + 'px';
+        char.style.animationDuration = (Math.random() * 3 + 1) + 's';
+        char.style.animationDelay = Math.random() * 2 + 's';
+        
+        const useCodeSnippet = Math.random() < 0.3;
+        char.textContent = useCodeSnippet ? 
+            codeSnippets[Math.floor(Math.random() * codeSnippets.length)] :
+            characters[Math.floor(Math.random() * characters.length)];
+            
+        const goldVariations = [
+            'rgb(180, 149, 47)',
+            'rgb(223, 171, 0)',
+            'rgb(255, 215, 0)',
+            'rgb(218, 165, 32)',
+            'rgb(184, 134, 11)'
+        ];
+        char.style.color = goldVariations[Math.floor(Math.random() * goldVariations.length)];
+        char.style.textShadow = `0 0 5px ${char.style.color}, 0 0 10px ${char.style.color}`;
+        
+        container.appendChild(char);
+        
+        char.addEventListener('animationend', () => {
+            if (matrixActive) {
+                container.removeChild(char);
+                setTimeout(() => {
+                    if (matrixActive) {
+                        createMatrixColumn(container, x, characters, codeSnippets);
+                    }
+                }, Math.random() * 1000);
+            }
+        });
+    }
+    
+    function stopMatrixRain() {
+        const matrixContainer = document.getElementById('matrixRain');
+        
+        document.body.classList.add('waking-up');
+        
+        const exitOverlay = document.createElement('div');
+        exitOverlay.className = 'matrix-exit-overlay';
+        document.body.appendChild(exitOverlay);
+        
+        requestAnimationFrame(() => {
+            exitOverlay.classList.add('active');
+        });
+        
+        matrixContainer.classList.add('fade-out');
+        matrixActive = false;
+        
+        setTimeout(() => {
+            matrixContainer.style.background = 'rgba(0, 0, 0, 0.4)';
+        }, 600);
+        
+        setTimeout(() => {
+            matrixContainer.style.background = 'transparent';
+            matrixContainer.classList.remove('active');
+        }, 1000);
+        
+        setTimeout(() => {
+            matrixContainer.innerHTML = '';
+            matrixContainer.classList.remove('fade-out');
+            matrixContainer.style.background = '#000';
+            
+            if (exitOverlay.parentNode) {
+                document.body.removeChild(exitOverlay);
+            }
+            
+            document.body.classList.remove('waking-up');
+            
+            if (document.body.classList.contains('matrix-mode')) {
+                document.body.classList.remove('matrix-mode');
+            }
+        }, 2200);
+    }
+    
+    function showEasterEggModal() {
+        setTimeout(() => {
+            toggleMatrixMode();
+        }, 3000);
+    }
+    
+    function toggleMatrixMode() {
+        document.body.classList.toggle('matrix-mode');
+    }
+    
+    function triggerScreenShake() {
+        document.documentElement.classList.add('screen-shake');
+        
+        setTimeout(() => {
+            document.documentElement.classList.remove('screen-shake');
+        }, 2000);
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (userInput.length > 0 && userInput.length < konamiCode.length && 
+            ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+            e.preventDefault();
+        }
+        
+        userInput.push(e.code);
+        
+        let matches = true;
+        for (let i = 0; i < userInput.length; i++) {
+            if (userInput[i] !== konamiCode[i]) {
+                matches = false;
+                break;
+            }
+        }
+        
+        if (!matches) {
+            userInput = [];
+        } else {
+            if (userInput.length === konamiCode.length) {
+                console.clear();
+                console.log("Duhh, this was an obvious. Find other easter eggs if you can ;)");
+                
+                setTimeout(() => {
+                    userInput = [];
+                }, 2000);
+                
+                triggerScreenShake();
+                
+                setTimeout(() => {
+                    createMatrixRain();
+                }, 1000);
+            }
+        }
+        
+        if (userInput.length > konamiCode.length) {
+            userInput = userInput.slice(-konamiCode.length);
+        }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Easter egg is ready
+    });
+})();
