@@ -40,27 +40,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // URL Routing
 function initializeRouting() {
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll('section[id]:not(#contactModal)');
     const navLinks = document.querySelectorAll('.header__menu a[href^="#"]');
     
-    // Navigate Section
     function navigateToSection(sectionId) {
-        // Update URL
         if (sectionId && sectionId !== 'home') {
             window.history.pushState(null, null, `#${sectionId}`);
         } else {
-            // Home Section
             window.history.pushState(null, null, window.location.pathname);
         }
         
-        // Smooth Scroll
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth' });
         }
     }
     
-    // Update Navigation
     function updateActiveNavigation(currentSection) {
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -71,12 +66,13 @@ function initializeRouting() {
         });
     }
     
-    // Current Section
     function getCurrentSection() {
         let currentSection = 'home';
         const scrollPosition = window.scrollY + 100;
         
         sections.forEach(section => {
+            if (section.id === 'contactModal') return;
+            
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             
@@ -88,11 +84,8 @@ function initializeRouting() {
         return currentSection;
     }
     
-    // Handle scroll events to update URL
     let lastSection = 'home';
     let isScrolling = false;
-    
-    // Throttle Performance
     function throttle(func, limit) {
         let inThrottle;
         return function() {
@@ -109,15 +102,12 @@ function initializeRouting() {
     const handleScroll = throttle(() => {
         const currentSection = getCurrentSection();
         
-        // Section Changed
         if (currentSection !== lastSection) {
-            // Smooth Transition
             const navLinks = document.querySelectorAll('.header__menu a');
             navLinks.forEach(link => link.classList.add('transitioning'));
             
             lastSection = currentSection;
             
-            // Update URL
             if (currentSection === 'home') {
                 window.history.replaceState(null, null, window.location.pathname);
             } else {
@@ -125,7 +115,6 @@ function initializeRouting() {
             }
             updateActiveNavigation(currentSection);
             
-            // Remove Transition
             setTimeout(() => {
                 navLinks.forEach(link => link.classList.remove('transitioning'));
             }, 400);
@@ -134,21 +123,17 @@ function initializeRouting() {
     
     window.addEventListener('scroll', handleScroll);
     
-    // Direct Navigation
     function handleInitialHash() {
         const hash = window.location.hash.substring(1);
         if (hash && document.getElementById(hash)) {
-            // Delay Load
             setTimeout(() => {
                 navigateToSection(hash);
             }, 100);
         } else {
-            // Default Home
             updateActiveNavigation('home');
         }
     }
     
-    // Browser Navigation
     window.addEventListener('popstate', () => {
         const hash = window.location.hash.substring(1) || 'home';
         const targetSection = document.getElementById(hash);
@@ -158,7 +143,6 @@ function initializeRouting() {
         }
     });
     
-    // Nav Clicks
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -206,7 +190,6 @@ if (hamburger) {
         toggleMenu();
     });
     
-    // Close menu when clicking on menu items (mobile UX)
     const navMenu = document.getElementById('navMenu');
     if (navMenu) {
         const menuLinks = navMenu.querySelectorAll('a');
