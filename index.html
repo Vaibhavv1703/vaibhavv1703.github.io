@@ -35,312 +35,326 @@
 
     <!-- Matrix Rain Effect for Konami Code -->
     <div class="matrix-rain" id="matrixRain"></div>
-    
+
     <div class="main-content" id="mainContent">
         <div class="progress-bar"></div>
 
         <header>
-        <nav class="header__nav">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="header__menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">AboutMe</a></li>
-                <li><a href="#edu">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section>
-        <div class="contact__nav">
-            <ul class="contact__menu">
-                <li><a href="mailto:vaibhavv1703@gmail.com"><i class="fas fa-envelope"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/vaibhavsingh1703/"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/vaibhavv1703"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.instagram.com/va._.ibh._.av/"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://discordapp.com/users/1351436381200715786"><i class="fab fa-discord"></i></a></li>
-            </ul>
-        </div>
-    </section>
-
-    <a href="https://drive.google.com/file/d/1S-kD41CyaAvbdt5aUfiOnkvFPZDnOasi/view?usp=sharing" target="_blank"
-        class="resume-button">
-        <i class="fas fa-download"></i>
-        <span class="resume-text">Resume</span>
-    </a>
-
-
-    <section class="home" id="home">
-        <div class="home__content">
-            <div class="home__text">
-                <div class="greeting" data-aos="fade-up">Hello, I'm</div>
-                <div class="name" data-aos="zoom-in" data-aos-duration="1000">Vaibhav Singh.</div>
-                <span class="role" data-aos="fade-right" data-aos-delay="500">A Passionate <span
-                        id="typed"></span></span>
-                <div class="description">
-                    Crafting solutions, one line of code at a time.
+            <nav class="header__nav">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="cta-buttons">
-                    <button class="btn primary-btn" id="contactModalBtn">Let's Talk!</button>
+                <ul class="header__menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">AboutMe</a></li>
+                    <li><a href="#edu">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <div class="contact__nav">
+                <ul class="contact__menu">
+                    <li><a href="mailto:vaibhavv1703@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/vaibhavsingh1703/"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/vaibhavv1703"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.instagram.com/va._.ibh._.av/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://discordapp.com/users/1351436381200715786"><i class="fab fa-discord"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <a href="https://drive.google.com/file/d/1S-kD41CyaAvbdt5aUfiOnkvFPZDnOasi/view?usp=sharing" target="_blank"
+            class="resume-button">
+            <i class="fas fa-download"></i>
+            <span class="resume-text">Resume</span>
+        </a>
+
+
+        <section class="home" id="home">
+            <div class="home__content">
+                <div class="home__text">
+                    <div class="greeting" data-aos="fade-up">Hello, I'm</div>
+                    <div class="name" data-aos="zoom-in" data-aos-duration="1000">Vaibhav Singh.</div>
+                    <span class="role" data-aos="fade-right" data-aos-delay="500">A Passionate <span
+                            id="typed"></span></span>
+                    <div class="description">
+                        Crafting solutions, one line of code at a time.
+                    </div>
+                    <div class="cta-buttons">
+                        <button class="btn primary-btn" id="contactModalBtn">Let's Talk!</button>
+                    </div>
+                </div>
+                <div class="home__image" data-aos="fade-left">
+                    <img src="Assets/VS_dark.png" alt="VS">
                 </div>
             </div>
-            <div class="home__image" data-aos="fade-left">
-                <img src="Assets/VS_dark.png" alt="VS">
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    
-    <section class="modal" id="contactModal">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <div class="modal__header">
-                <h2>Let's Connect!</h2>
-                <button class="modal__close" id="closeModal">&times;</button>
-            </div>
-            <div class="modal__body">
-                <div class="modal__form">
-                    <form class="contact__form" id="contactForm" action="https://formspree.io/f/mldwgyor" method="POST">
-                        <div class="form__row">
-                            <div class="form__group">
-                                <input type="text" name="name" id="modalName" class="form__input" placeholder=" " required>
-                                <label for="modalName" class="form__label">Name</label>
+
+        <section class="modal" id="contactModal">
+            <div class="modal__overlay"></div>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h2>Let's Connect!</h2>
+                    <button class="modal__close" id="closeModal">&times;</button>
+                </div>
+                <div class="modal__body">
+                    <div class="modal__form">
+                        <form class="contact__form" id="contactForm" action="https://formspree.io/f/mldwgyor"
+                            method="POST">
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <input type="text" name="name" id="modalName" class="form__input" placeholder=" "
+                                        required>
+                                    <label for="modalName" class="form__label">Name</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" name="email" id="modalEmail" class="form__input" placeholder=" "
+                                        required>
+                                    <label for="modalEmail" class="form__label">Email</label>
+                                </div>
                             </div>
                             <div class="form__group">
-                                <input type="email" name="email" id="modalEmail" class="form__input" placeholder=" " required>
-                                <label for="modalEmail" class="form__label">Email</label>
+                                <input type="text" name="subject" id="modalSubject" class="form__input" placeholder=" ">
+                                <label for="modalSubject" class="form__label">Subject</label>
                             </div>
-                        </div>
-                        <div class="form__group">
-                            <input type="text" name="subject" id="modalSubject" class="form__input" placeholder=" ">
-                            <label for="modalSubject" class="form__label">Subject</label>
-                        </div>
-                        <div class="form__group">
-                            <textarea name="message" id="modalMessage" class="form__textarea" placeholder=" " rows="4" required></textarea>
-                            <label for="modalMessage" class="form__label">Message</label>
-                        </div>
-                        <button type="submit" class="btn primary-btn" id="submitBtn">
-                            <span class="btn-text">Send Message</span>
-                        </button>
-                        <div id="formStatus" class="form__status"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="about" id="about">
-        <h2 class="section-title" data-aos="fade-up">About Me</h2>
-        <div class="about__content">
-            <div class="about__text" data-aos="fade-right">
-                <p>Hello, I'm Vaibhav Singh, a pre-final year student at IIEST, Shibpur. I'm a passionate developer with
-                    a strong
-                    interest in solving real-world problems using technology. I specialize in Data Structures and
-                    Algorithms (DSA) and have experience working with C++, Java and Python.</p>
-                <p>I am always eager to learn new technologies and apply my skills to impactful projects. My goal is
-                    to grow as a developer and contribute to innovative solutions in the tech industry.</p>
-            </div>
-            <div class="about__image" data-aos="fade-left">
-                <img src="Assets/pfp_1.jpeg" alt="VaibhavS">
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="edu" id="edu">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline-horizontal">
-
-            <div class="timeline-item up" data-aos="fade-down">
-                <div class="timeline-content">
-                    <div class="timeline-summary">2019 - 2021</div>
-                    <div class="timeline-details">
-                        <h3>Class X (ICSE)</h3>
-                        <p>Ann Mary School</p>
-                        <p>89%</p>
-                    </div>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
-
-            <div class="timeline-item down" data-aos="fade-up">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-summary">2021 - 2023</div>
-                    <div class="timeline-details">
-                        <h3>Class XII (CBSE)</h3>
-                        <p>Defence Public School</p>
-                        <p>86%</p>
+                            <div class="form__group">
+                                <textarea name="message" id="modalMessage" class="form__textarea" placeholder=" "
+                                    rows="4" required></textarea>
+                                <label for="modalMessage" class="form__label">Message</label>
+                            </div>
+                            <button type="submit" class="btn primary-btn" id="submitBtn">
+                                <span class="btn-text">Send Message</span>
+                            </button>
+                            <div id="formStatus" class="form__status"></div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="timeline-item up" data-aos="fade-down">
-                <div class="timeline-content">
-                    <div class="timeline-summary">2023 - Present</div>
-                    <div class="timeline-details">
-                        <h3>B.Tech in Computer Science</h3>
-                        <p>IIEST, Shibpur</p>
-                        <p>8.42 CGPA</p>
+
+
+        <section class="about" id="about">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about__content">
+                <div class="about__text" data-aos="fade-right">
+                    <p>Hello, I'm Vaibhav Singh, a pre-final year student at IIEST, Shibpur. I'm a passionate developer
+                        with
+                        a strong
+                        interest in solving real-world problems using technology. I specialize in Data Structures and
+                        Algorithms (DSA) and have experience working with C++, Java and Python.</p>
+                    <p>I am always eager to learn new technologies and apply my skills to impactful projects. My goal is
+                        to grow as a developer and contribute to innovative solutions in the tech industry.</p>
+                </div>
+                <div class="about__image" data-aos="fade-left">
+                    <img src="Assets/pfp_1.jpeg" alt="VaibhavS">
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="edu" id="edu">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline-horizontal">
+
+                <div class="timeline-item up" data-aos="fade-down">
+                    <div class="timeline-content">
+                        <div class="timeline-summary">2019 - 2021</div>
+                        <div class="timeline-details">
+                            <h3>Class X (ICSE)</h3>
+                            <p>Ann Mary School</p>
+                            <p>89%</p>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item down" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-summary">2021 - 2023</div>
+                        <div class="timeline-details">
+                            <h3>Class XII (CBSE)</h3>
+                            <p>Defence Public School</p>
+                            <p>86%</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-dot"></div>
+
+                <div class="timeline-item up" data-aos="fade-down">
+                    <div class="timeline-content">
+                        <div class="timeline-summary">2023 - Present</div>
+                        <div class="timeline-details">
+                            <h3>B.Tech in Computer Science</h3>
+                            <p>IIEST, Shibpur</p>
+                            <p>8.42 CGPA</p>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="skills" id="skills">
+            <h2 class="section-title" data-aos="fade-up">Skills</h2>
+
+            <div class="skills__tabs">
+                <button class="skills__tab active" data-target="allSection">All</button>
+                <button class="skills__tab" data-target="languagesSection">Software Languages</button>
+                <button class="skills__tab" data-target="webSection">Web Languages</button>
+                <button class="skills__tab" data-target="technologiesSection">Technologies</button>
             </div>
 
-        </div>
-    </section>
+            <div class="skills__content">
+                <div class="skills__group" id="allSection">
+                    <i class="devicon-c-plain colored skills__item" data-skill="C"></i>
+                    <i class="devicon-cplusplus-plain colored skills__item" data-skill="C++"></i>
+                    <i class="devicon-java-plain colored skills__item" data-skill="Java"></i>
+                    <i class="devicon-python-plain colored skills__item" data-skill="Python"></i>
+                    <i class="devicon-csharp-plain colored skills__item" data-skill="C#"></i>
+                    <i class="devicon-javascript-plain colored skills__item" data-skill="JavaScript"></i>
+                    <i class="devicon-html5-plain colored skills__item" data-skill="HTML5"></i>
+                    <i class="devicon-css3-plain colored skills__item" data-skill="CSS3"></i>
+                    <i class="devicon-nodejs-plain colored skills__item" data-skill="Node.js"></i>
+                    <i class="devicon-linux-plain skills__item" data-skill="Linux"></i>
+                    <i class="devicon-git-plain colored skills__item" data-skill="Git"></i>
+                    <i class="devicon-github-original skills__item" data-skill="GitHub"></i>
+                    <i class="devicon-vscode-plain colored skills__item" data-skill="VS Code"></i>
+                    <i class="devicon-visualstudio-plain colored skills__item" data-skill="Visual Studio"></i>
+                    <i class="devicon-unity-original skills__item" data-skill="Unity"></i>
+                    <i class="devicon-unrealengine-original skills__item" data-skill="Unreal Engine"></i>
+                </div>
 
+                <div class="skills__group" id="languagesSection" style="display: none;">
+                    <i class="devicon-c-plain colored skills__item" data-skill="C"></i>
+                    <i class="devicon-cplusplus-plain colored skills__item" data-skill="C++"></i>
+                    <i class="devicon-java-plain colored skills__item" data-skill="Java"></i>
+                    <i class="devicon-python-plain colored skills__item" data-skill="Python"></i>
+                    <i class="devicon-csharp-plain colored skills__item" data-skill="C#"></i>
+                    <i class="devicon-javascript-plain colored skills__item" data-skill="JavaScript"></i>
+                </div>
 
+                <div class="skills__group" id="webSection" style="display: none;">
+                    <i class="devicon-html5-plain colored skills__item" data-skill="HTML5"></i>
+                    <i class="devicon-css3-plain colored skills__item" data-skill="CSS3"></i>
+                    <i class="devicon-javascript-plain colored skills__item" data-skill="JavaScript"></i>
+                    <i class="devicon-nodejs-plain colored skills__item" data-skill="Node.js"></i>
 
-    <section class="skills" id="skills">
-        <h2 class="section-title" data-aos="fade-up">Skills</h2>
+                    <!-- <i class="devicon-react-original colored skills__item" data-skill="React"></i> -->
+                    <!-- <i class="devicon-tailwindcss-plain colored skills__item" data-skill="TailwindCSS"></i> -->
+                </div>
 
-        <div class="skills__tabs">
-            <button class="skills__tab active" data-target="allSection">All</button>
-            <button class="skills__tab" data-target="languagesSection">Software Languages</button>
-            <button class="skills__tab" data-target="webSection">Web Languages</button>
-            <button class="skills__tab" data-target="technologiesSection">Technologies</button>
-        </div>
+                <div class="skills__group" id="technologiesSection" style="display: none;">
+                    <i class="devicon-linux-plain skills__item" data-skill="Linux"></i>
+                    <i class="devicon-git-plain colored skills__item" data-skill="Git"></i>
+                    <i class="devicon-github-original skills__item" data-skill="GitHub"></i>
+                    <i class="devicon-vscode-plain colored skills__item" data-skill="VS Code"></i>
+                    <i class="devicon-visualstudio-plain colored skills__item" data-skill="Visual Studio"></i>
+                    <i class="devicon-unity-original skills__item" data-skill="Unity"></i>
+                    <i class="devicon-unrealengine-original skills__item" data-skill="Unreal Engine"></i>
 
-        <div class="skills__content">
-            <div class="skills__group" id="allSection">
-                <i class="devicon-c-plain colored skills__item" data-skill="C"></i>
-                <i class="devicon-cplusplus-plain colored skills__item" data-skill="C++"></i>
-                <i class="devicon-java-plain colored skills__item" data-skill="Java"></i>
-                <i class="devicon-python-plain colored skills__item" data-skill="Python"></i>
-                <i class="devicon-csharp-plain colored skills__item" data-skill="C#"></i>
-                <i class="devicon-javascript-plain colored skills__item" data-skill="JavaScript"></i>
-                <i class="devicon-html5-plain colored skills__item" data-skill="HTML5"></i>
-                <i class="devicon-css3-plain colored skills__item" data-skill="CSS3"></i>
-                <i class="devicon-nodejs-plain colored skills__item" data-skill="Node.js"></i>
-                <i class="devicon-linux-plain skills__item" data-skill="Linux"></i>
-                <i class="devicon-git-plain colored skills__item" data-skill="Git"></i>
-                <i class="devicon-github-original skills__item" data-skill="GitHub"></i>
-                <i class="devicon-vscode-plain colored skills__item" data-skill="VS Code"></i>
-                <i class="devicon-visualstudio-plain colored skills__item" data-skill="Visual Studio"></i>
-                <i class="devicon-unity-original skills__item" data-skill="Unity"></i>
-                <i class="devicon-unrealengine-original skills__item" data-skill="Unreal Engine"></i>
+                    <!-- <i class="devicon-firebase-plain colored skills__item" data-skill="Firebase"></i> -->
+                    <!-- <i class="devicon-docker-plain colored skills__item" data-skill="Docker"></i> -->
+                    <!-- <i class="devicon-kubernetes-plain colored skills__item" data-skill="Kubernetes"></i> -->
+                </div>
             </div>
 
-            <div class="skills__group" id="languagesSection" style="display: none;">
-                <i class="devicon-c-plain colored skills__item" data-skill="C"></i>
-                <i class="devicon-cplusplus-plain colored skills__item" data-skill="C++"></i>
-                <i class="devicon-java-plain colored skills__item" data-skill="Java"></i>
-                <i class="devicon-python-plain colored skills__item" data-skill="Python"></i>
-                <i class="devicon-csharp-plain colored skills__item" data-skill="C#"></i>
-                <i class="devicon-javascript-plain colored skills__item" data-skill="JavaScript"></i>
+            <div class="podium">
+                <h3 class="podium__title">My Ratings</h3>
+                <div class="podium__boxes">
+                    <a href="https://www.codechef.com/users/vaibhavv_1703" target="_blank"
+                        class="podium__box podium__box--left" data-aos="fade-up-right">
+                        <img src="Assets/CC.jpg" alt="CodeChef Logo" class="podium__image">
+                        <h4>CodeChef</h4>
+                        <p class="CC_rating">Max Rating: 1628</p>
+                    </a>
+                    <a href="https://codeforces.com/profile/Vaibhavv1703" target="_blank"
+                        class="podium__box podium__box--center" data-aos="fade-up">
+                        <img src="Assets/cf.png" alt="Codeforces Logo" class="podium__image">
+                        <h4>Codeforces</h4>
+                        <p class="CF_rating">Max Rating: 1289</p>
+                    </a>
+                    <a href="https://leetcode.com/u/Vaibhavv_1703/" target="_blank"
+                        class="podium__box podium__box--right" data-aos="fade-up-left">
+                        <img src="Assets/lc.png" alt="Leetcode Logo" class="podium__image">
+                        <h4>Leetcode</h4>
+                        <p class="LC_rating">Max Rating: 1715</p>
+                    </a>
+                </div>
             </div>
+        </section>
 
-            <div class="skills__group" id="webSection" style="display: none;">
-                <i class="devicon-html5-plain colored skills__item" data-skill="HTML5"></i>
-                <i class="devicon-css3-plain colored skills__item" data-skill="CSS3"></i>
-                <i class="devicon-javascript-plain colored skills__item" data-skill="JavaScript"></i>
-                <i class="devicon-nodejs-plain colored skills__item" data-skill="Node.js"></i>
 
-                <!-- <i class="devicon-react-original colored skills__item" data-skill="React"></i> -->
-                <!-- <i class="devicon-tailwindcss-plain colored skills__item" data-skill="TailwindCSS"></i> -->
+
+        <section class="projects" id="projects">
+            <h2 class="section-title" data-aos="fade-up">Projects</h2>
+            <div class="carousel" data-aos="fade-up">
+                <div class="carousel__track">
+                    <a href="https://github.com/Vaibhavv1703/tShark" class="carousel__card">
+                        <h3>Automated tShark</h3>
+                        <p>A terminal-based tool for network packet analysis, providing real-time monitoring and
+                            filtering capabilities for network traffic.</p>
+                    </a>
+                    <a href="https://github.com/Vaibhavv1703/passwordTool" class="carousel__card">
+                        <h3>Password Manager</h3>
+                        <p>A secure, terminal-based utility for managing and retrieving passwords efficiently, featuring
+                            encryption and easy search functionality.</p>
+                    </a>
+                    <a href="https://github.com/Vaibhavv1703/Quidditch-Quest" class="carousel__card">
+                        <h3>Quidditch Quest</h3>
+                        <p>A browser-based game inspired by Harry Potter's Quidditch, offering engaging gameplay and
+                            magical
+                            challenges for fans and casual gamers alike.</p>
+                    </a>
+                    <a href="https://github.com/Vaibhavv1703/Expense-Manager" class="carousel__card">
+                        <h3>Expense Manager</h3>
+                        <p>A web application to log, categorize, and track your expenses, providing insightful analytics
+                            to
+                            help you manage your finances better.</p>
+                    </a>
+                    <a href="https://github.com/Vaibhavv1703/DevilMayCry_Portfolio" class="carousel__card">
+                        <h3>DmC Themed Portfolio</h3>
+                        <p>A personal portfolio website designed with a Devil May Cry 5 theme, showcasing projects and
+                            skills with stylish, game-inspired visuals.</p>
+                    </a>
+                    <a href="https://github.com/Vaibhavv1703/cardValidator" class="carousel__card">
+                        <h3>Card Validator</h3>
+                        <p>A web application to validate credit and debit card numbers, providing information about card
+                            type and validity.</p>
+                    </a>
+                </div>
             </div>
-
-            <div class="skills__group" id="technologiesSection" style="display: none;">
-                <i class="devicon-linux-plain skills__item" data-skill="Linux"></i>
-                <i class="devicon-git-plain colored skills__item" data-skill="Git"></i>
-                <i class="devicon-github-original skills__item" data-skill="GitHub"></i>
-                <i class="devicon-vscode-plain colored skills__item" data-skill="VS Code"></i>
-                <i class="devicon-visualstudio-plain colored skills__item" data-skill="Visual Studio"></i>
-                <i class="devicon-unity-original skills__item" data-skill="Unity"></i>
-                <i class="devicon-unrealengine-original skills__item" data-skill="Unreal Engine"></i>
-
-                <!-- <i class="devicon-firebase-plain colored skills__item" data-skill="Firebase"></i> -->
-                <!-- <i class="devicon-docker-plain colored skills__item" data-skill="Docker"></i> -->
-                <!-- <i class="devicon-kubernetes-plain colored skills__item" data-skill="Kubernetes"></i> -->
+            <div class="carousel__btn">
+                <button class="carousel__btn--left" data-aos="fade-up-left">&#8592;</button>
+                <button class="carousel__btn--right" data-aos="fade-up-right">&#8594;</button>
             </div>
-        </div>
+        </section>
 
-        <div class="podium">
-            <h3 class="podium__title">My Ratings</h3>
-            <div class="podium__boxes">
-                <a href="https://www.codechef.com/users/vaibhavv_1703" target="_blank"
-                    class="podium__box podium__box--left" data-aos="fade-up-right">
-                    <img src="Assets/CC.jpg" alt="CodeChef Logo" class="podium__image">
-                    <h4>CodeChef</h4>
-                    <p class="CC_rating">Max Rating: 1628</p>
-                </a>
-                <a href="https://codeforces.com/profile/Vaibhavv1703" target="_blank"
-                    class="podium__box podium__box--center" data-aos="fade-up">
-                    <img src="Assets/cf.png" alt="Codeforces Logo" class="podium__image">
-                    <h4>Codeforces</h4>
-                    <p class="CF_rating">Max Rating: 1289</p>
-                </a>
-                <a href="https://leetcode.com/u/Vaibhavv_1703/" target="_blank" class="podium__box podium__box--right"
-                    data-aos="fade-up-left">
-                    <img src="Assets/lc.png" alt="Leetcode Logo" class="podium__image">
-                    <h4>Leetcode</h4>
-                    <p class="LC_rating">Max Rating: 1715</p>
-                </a>
+
+
+        <footer class="footer">
+            <div class="footer__content">
+                <p class="footer__copyright">
+                    © 2025 Vaibhav Singh. All Rights Reserved.
+                </p>
             </div>
-        </div>
-    </section>
-
-
-
-    <section class="projects" id="projects">
-        <h2 class="section-title" data-aos="fade-up">Projects</h2>
-        <div class="carousel" data-aos="fade-up">
-            <div class="carousel__track">
-                <a href="https://github.com/Vaibhavv1703/tShark" class="carousel__card">
-                    <h3>Automated tShark</h3>
-                    <p>A terminal-based tool for network packet analysis, providing real-time monitoring and
-                        filtering capabilities for network traffic.</p>
-                </a>
-                <a href="https://github.com/Vaibhavv1703/passwordTool" class="carousel__card">
-                    <h3>Password Manager</h3>
-                    <p>A secure, terminal-based utility for managing and retrieving passwords efficiently, featuring
-                        encryption and easy search functionality.</p>
-                </a>
-                <a href="https://github.com/Vaibhavv1703/Quidditch-Quest" class="carousel__card">
-                    <h3>Quidditch Quest</h3>
-                    <p>A browser-based game inspired by Harry Potter's Quidditch, offering engaging gameplay and magical
-                        challenges for fans and casual gamers alike.</p>
-                </a>
-                <a href="https://github.com/Vaibhavv1703/Expense-Manager" class="carousel__card">
-                    <h3>Expense Manager</h3>
-                    <p>A web application to log, categorize, and track your expenses, providing insightful analytics to
-                        help you manage your finances better.</p>
-                </a>
-                <a href="https://github.com/Vaibhavv1703/DevilMayCry_Portfolio" class="carousel__card">
-                    <h3>DmC Themed Portfolio</h3>
-                    <p>A personal portfolio website designed with a Devil May Cry 5 theme, showcasing projects and
-                        skills with stylish, game-inspired visuals.</p>
-                </a>
-            </div>
-        </div>
-        <div class="carousel__btn">
-            <button class="carousel__btn--left" data-aos="fade-up-left">&#8592;</button>
-            <button class="carousel__btn--right" data-aos="fade-up-right">&#8594;</button>
-        </div>
-    </section>
-
-
-
-    <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__copyright">
-                © 2025 Vaibhav Singh. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
+        </footer>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script src="app.js"></script>
+
 </html>
